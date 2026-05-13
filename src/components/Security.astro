@@ -1,0 +1,53 @@
+---
+const securityCards = [
+  { icon: '🔐', title: 'AES-256 Encryption', body: 'Your vault data is encrypted with AES-256 at rest — the same standard used by banks.' },
+  { icon: '🔑', title: 'PBKDF2 Key Derivation', body: 'Encryption keys are derived from your credentials using PBKDF2 — never stored in plain text.' },
+  { icon: '🧅', title: 'Two-layer Key Design', body: 'A vault key encrypts your data; a separate key encrypts the vault key — double protection.' },
+  { icon: '☁️', title: 'Firebase Infrastructure', body: 'Backed by Google Firebase, certified to ISO 27001, SOC 2, and multiple global standards.' },
+  { icon: '🙈', title: 'We Cannot Read Your Data', body: 'Zero-knowledge design means eKosha staff can never access your decrypted vault contents.' },
+  { icon: '🔏', title: 'PIN & Biometric Lock', body: 'Every app session requires your PIN or biometric — even if someone unlocks your phone.' },
+];
+---
+<section id="security" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: trust content -->
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
+          Built with the same standards as enterprise banking.
+        </h2>
+        <p class="text-brand-muted text-lg leading-relaxed mb-8">
+          Your family's financial data is among the most sensitive information you own.
+          We built eKosha with the same security standards used by leading financial
+          institutions — so you can trust us with what matters most.
+        </p>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-medium px-4 py-2 rounded-full border border-green-200">
+            ✅ AES-256 Encrypted
+          </span>
+          <span class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-4 py-2 rounded-full border border-blue-200">
+            ✅ Firebase Certified
+          </span>
+          <span class="inline-flex items-center gap-2 bg-purple-50 text-purple-700 text-sm font-medium px-4 py-2 rounded-full border border-purple-200">
+            ✅ Zero-knowledge Design
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: 2×3 security cards -->
+      <div class="grid grid-cols-2 gap-4">
+        {securityCards.map(card => (
+          <div class="bg-brand-bg rounded-xl p-5 border border-gray-100">
+            <div class="text-2xl mb-3">{card.icon}</div>
+            <h4 class="font-semibold text-brand-navy text-sm mb-1">{card.title}</h4>
+            <p class="text-brand-muted text-xs leading-relaxed">{card.body}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

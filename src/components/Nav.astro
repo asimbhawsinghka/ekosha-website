@@ -1,0 +1,62 @@
+---
+const APP_URL = 'https://app.ekosha.co.in';
+const navLinks = [
+  { label: 'Features',     href: '/#features' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Security',     href: '/#security' },
+  { label: 'Pricing',      href: '/#pricing' },
+];
+---
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <rect width="64" height="64" rx="12" fill="#0D3B66"/>
+        <path d="M32 10 L50 18 L50 34 C50 44 41 52 32 56 C23 52 14 44 14 34 L14 18 Z" fill="#00A896"/>
+        <polyline points="22,32 29,40 42,25" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="text-xl font-bold text-brand-navy tracking-tight">eKosha</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm font-medium text-brand-muted hover:text-brand-navy transition-colors duration-150"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Desktop CTA buttons -->
+    <div class="hidden md:flex items-center gap-3">
+      <a
+        href={APP_URL}
+        class="text-sm font-medium text-brand-navy hover:text-brand-teal transition-colors duration-150"
+      >
+        Log In
+      </a>
+      <a
+        href={APP_URL}
+        class="text-sm font-semibold bg-brand-teal text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-150 shadow-sm"
+      >
+        Get Started
+      </a>
+    </div>
+
+    <!-- Mobile: only Get Started -->
+    <a
+      href={APP_URL}
+      class="md:hidden text-sm font-semibold bg-brand-teal text-white px-4 py-2 rounded-lg"
+    >
+      Get Started
+    </a>
+
+  </nav>
+</header>

@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Privacy Policy — eKosha"
+  description="Learn how eKosha collects, uses and protects your personal information."
+>
+  <Nav />
+  <main class="max-w-3xl mx-auto px-6 py-24">
+    <h1 class="text-4xl font-bold text-brand-navy mb-4">Privacy Policy</h1>
+    <p class="text-brand-muted mb-10">Last updated: May 2025</p>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-brand-navy mb-3">What We Collect</h2>
+      <p class="text-brand-text leading-relaxed">
+        We collect information you provide directly — such as your name, email address, and
+        financial asset details you choose to store in your vault. We also collect device and
+        usage data (app version, crash reports) to improve reliability and performance.
+        We do not collect or store your raw financial account passwords or PINs.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-brand-navy mb-3">How We Protect Your Data</h2>
+      <p class="text-brand-text leading-relaxed">
+        All vault data is encrypted at rest using AES-256 and in transit using TLS 1.3.
+        Your vault contents are end-to-end encrypted — even the eKosha team cannot read
+        your asset details. Access to the app is protected by your device biometrics or PIN,
+        and session keys are never persisted in plain text.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-brand-navy mb-3">Third-Party Services</h2>
+      <p class="text-brand-text leading-relaxed">
+        We use <strong>Firebase</strong> (Google) for authentication, real-time database, and
+        cloud storage. Firebase processes data in accordance with Google's privacy policies and
+        holds certifications including ISO 27001 and SOC 2. We do not sell, rent, or share
+        your personal data with advertisers or any third party for marketing purposes.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-brand-navy mb-3">Contact</h2>
+      <p class="text-brand-text leading-relaxed">
+        For privacy-related questions or data deletion requests, email us at{' '}
+        <a href="mailto:support@ekosha.co.in" class="text-brand-teal underline">
+          support@ekosha.co.in
+        </a>.
+        We will respond within 7 business days.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>

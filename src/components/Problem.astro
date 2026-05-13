@@ -1,0 +1,41 @@
+---
+const problems = [
+  {
+    icon: '📂',
+    title: 'Documents scattered everywhere',
+    body: 'Policy papers in drawers, FD slips in lockers, passbooks across files — no single place holds everything your family needs.',
+  },
+  {
+    icon: '❓',
+    title: 'Nobody knows what you own',
+    body: 'Billions in unclaimed assets sit with Indian banks and insurers every year because families simply didn\'t know they existed.',
+  },
+  {
+    icon: '🔒',
+    title: 'Sharing sensitive data feels risky',
+    body: 'Passing account numbers over WhatsApp or leaving documents in an unlocked drawer exposes your family to real risk.',
+  },
+];
+---
+<section class="bg-brand-bg py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+        When the unexpected happens, your family shouldn't be left guessing.
+      </h2>
+      <p class="text-brand-muted max-w-2xl mx-auto text-lg">
+        Most families have no single, safe, organised record of their financial assets.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {problems.map(p => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-5">{p.icon}</div>
+          <h3 class="text-lg font-semibold text-brand-navy mb-3">{p.title}</h3>
+          <p class="text-brand-muted leading-relaxed">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
