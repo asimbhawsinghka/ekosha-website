@@ -1,0 +1,120 @@
+---
+const APP_URL = 'https://app.ekosha.co.in';
+---
+<section class="relative bg-brand-navy overflow-hidden">
+  <!-- Subtle white grid pattern -->
+  <div class="absolute inset-0 opacity-10" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)"/>
+    </svg>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: copy -->
+      <div>
+        <!-- Pill badge -->
+        <div class="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-full mb-6 border border-white/20">
+          <span class="w-2 h-2 rounded-full bg-brand-teal inline-block"></span>
+          Encrypted · Private · Built for Indian Families
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Your family's financial safety net —{' '}
+          <span class="text-brand-teal">organised and secure.</span>
+        </h1>
+
+        <p class="text-lg text-white/70 leading-relaxed mb-8 max-w-lg">
+          eKosha is a private encrypted vault for Indian families to store, organise,
+          and securely pass on financial assets — bank accounts, FDs, mutual funds,
+          properties, insurance and more.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a
+            href={APP_URL}
+            class="inline-flex items-center justify-center bg-brand-teal text-white font-semibold px-6 py-3 rounded-xl hover:bg-opacity-90 transition-all shadow-lg text-base"
+          >
+            Get Started — it's free
+          </a>
+          <a
+            href={APP_URL}
+            class="inline-flex items-center justify-center border border-white/30 text-white font-medium px-6 py-3 rounded-xl hover:bg-white/10 transition-all text-base"
+          >
+            Log In
+          </a>
+        </div>
+
+        <!-- Fine print -->
+        <p class="text-xs text-white/40">
+          No credit card required · Free plan available · Android &amp; Web
+        </p>
+      </div>
+
+      <!-- Right: card mockup (hidden on mobile) -->
+      <div class="hidden lg:flex justify-center lg:justify-end">
+        <div class="w-80 bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <!-- Card header -->
+          <div class="bg-brand-navy px-5 py-4">
+            <p class="text-white/60 text-xs font-medium mb-1">My Assets</p>
+            <p class="text-white text-2xl font-bold">₹42,80,000</p>
+            <p class="text-brand-teal text-xs font-medium mt-0.5">Total Portfolio Value</p>
+          </div>
+
+          <!-- Asset rows -->
+          <div class="px-5 py-4 space-y-3">
+            <!-- Row 1 -->
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <div class="flex items-center gap-3">
+                <span class="text-xl">🏦</span>
+                <div>
+                  <p class="text-sm font-semibold text-brand-text">SBI Savings Account</p>
+                  <p class="text-xs text-brand-muted">Bank Account</p>
+                </div>
+              </div>
+              <p class="text-sm font-semibold text-brand-text">₹3,40,000</p>
+            </div>
+            <!-- Row 2 -->
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <div class="flex items-center gap-3">
+                <span class="text-xl">📈</span>
+                <div>
+                  <p class="text-sm font-semibold text-brand-text">LIC Life Insurance</p>
+                  <p class="text-xs text-brand-muted">Insurance</p>
+                </div>
+              </div>
+              <p class="text-sm font-semibold text-brand-text">₹9,40,000</p>
+            </div>
+            <!-- Row 3 -->
+            <div class="flex items-center justify-between py-2">
+              <div class="flex items-center gap-3">
+                <span class="text-xl">💹</span>
+                <div>
+                  <p class="text-sm font-semibold text-brand-text">HDFC Equity Mutual Fund</p>
+                  <p class="text-xs text-brand-muted">Mutual Fund</p>
+                </div>
+              </div>
+              <p class="text-sm font-semibold text-brand-text">₹30,00,000</p>
+            </div>
+          </div>
+
+          <!-- Encrypted footer badge -->
+          <div class="bg-green-50 border-t border-green-100 px-5 py-3 flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            <span class="text-xs font-medium text-green-700">AES-256 encrypted · Only you hold the keys</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

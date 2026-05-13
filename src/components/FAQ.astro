@@ -1,0 +1,66 @@
+---
+const faqs = [
+  {
+    q: 'Is my financial data safe?',
+    a: 'Yes. All data is encrypted end-to-end using AES-256 before it leaves your device. Even the eKosha team cannot read your vault contents. Only you and the family members you explicitly invite can access your data.',
+  },
+  {
+    q: 'Who can see my assets?',
+    a: 'Only you — and anyone you choose to share with. You control access at the asset level. Each person you invite sees only what you allow them to see, with read-only or edit permissions.',
+  },
+  {
+    q: 'What if I forget my password?',
+    a: 'You can recover your account via your registered mobile number using OTP verification. Your encryption keys are derived from your credentials, so a secure recovery flow re-establishes access without exposing your data.',
+  },
+  {
+    q: 'Does eKosha work offline?',
+    a: 'You can view previously loaded assets offline. Adding or editing assets and syncing with family members requires an internet connection. Documents and full vault data sync automatically when connectivity is restored.',
+  },
+  {
+    q: 'Is there a mobile app?',
+    a: 'Yes. eKosha is available as a native Android app and a full-featured web app accessible from any browser. Both are kept in sync in real time.',
+  },
+  {
+    q: 'Can my family access eKosha if I am unable to?',
+    a: 'Yes — that is exactly what eKosha is built for. Family members you have shared assets with can access their permitted view at any time. For emergency access workflows, the Premium plan includes inheritance allocation and nominee-specific sharing.',
+  },
+  {
+    q: 'How is eKosha different from a password manager?',
+    a: 'A password manager stores login credentials. eKosha stores structured financial asset records — account numbers, policy details, property documents, nominee information, and valuations — designed specifically for wealth inheritance and family transparency.',
+  },
+];
+---
+<section id="faq" class="bg-white py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-brand-muted text-lg">Everything you need to know about eKosha.</p>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map(faq => (
+        <details class="group bg-brand-bg rounded-xl border border-gray-100 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-brand-navy hover:text-brand-teal transition-colors">
+            {faq.q}
+            <svg
+              class="w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180 text-brand-muted"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-brand-muted leading-relaxed text-sm">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

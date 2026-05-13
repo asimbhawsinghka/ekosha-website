@@ -1,0 +1,77 @@
+---
+const features = [
+  {
+    icon: '🏦',
+    title: 'Secure Asset Vault',
+    body: 'Store bank accounts, FDs, PPF, and all financial assets in one private, encrypted place.',
+    bg: 'bg-blue-50',
+    border: 'border-blue-100',
+    iconBg: 'bg-blue-600',
+  },
+  {
+    icon: '🤝',
+    title: 'Trusted Sharing',
+    body: 'Securely share specific assets or your full vault with trusted family members — with granular access controls.',
+    bg: 'bg-teal-50',
+    border: 'border-teal-100',
+    iconBg: 'bg-teal-600',
+  },
+  {
+    icon: '📋',
+    title: 'Nominee Planning',
+    body: 'Assign nominees to each asset and ensure the right people always know what they\'ll inherit.',
+    bg: 'bg-purple-50',
+    border: 'border-purple-100',
+    iconBg: 'bg-purple-600',
+  },
+  {
+    icon: '📊',
+    title: 'Portfolio Insights',
+    body: 'See your complete family wealth at a glance — by asset type, institution, or nominee.',
+    bg: 'bg-orange-50',
+    border: 'border-orange-100',
+    iconBg: 'bg-orange-600',
+  },
+  {
+    icon: '🔐',
+    title: 'End-to-End Encryption',
+    body: 'AES-256 encryption means only you and those you authorise can ever read your data — not even us.',
+    bg: 'bg-green-50',
+    border: 'border-green-100',
+    iconBg: 'bg-green-600',
+  },
+  {
+    icon: '📱',
+    title: 'Mobile + Web',
+    body: 'Available as a native Android app and a full-featured web app — always in sync, always available.',
+    bg: 'bg-pink-50',
+    border: 'border-pink-100',
+    iconBg: 'bg-pink-600',
+  },
+];
+---
+<section id="features" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+        Everything Your Family Needs
+      </h2>
+      <p class="text-brand-muted max-w-2xl mx-auto text-lg">
+        eKosha is purpose-built for Indian families — supporting every asset type
+        that matters across generations.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map(f => (
+        <div class={`rounded-2xl p-6 border ${f.bg} ${f.border}`}>
+          <div class={`w-12 h-12 rounded-xl ${f.iconBg} flex items-center justify-center mb-5 text-xl`}>
+            {f.icon}
+          </div>
+          <h3 class="text-lg font-semibold text-brand-navy mb-2">{f.title}</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">{f.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
