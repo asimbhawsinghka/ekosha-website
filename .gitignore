@@ -9,6 +9,9 @@ dist/
 .vercel/
 .netlify/
 
+# Astro cache
+.astro/
+
 # Environment
 .env
 .env.local
