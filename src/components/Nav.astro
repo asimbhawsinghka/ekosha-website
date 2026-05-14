@@ -7,15 +7,42 @@ const navLinks = [
   { label: 'Pricing',      href: '/#pricing' },
 ];
 ---
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-bg shadow-sm">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 shrink-0">
-      <svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#0D3B66"/>
-        <path d="M32 10 L50 18 L50 34 C50 44 41 52 32 56 C23 52 14 44 14 34 L14 18 Z" fill="#00A896"/>
-        <polyline points="22,32 29,40 42,25" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <a href="/" class="flex items-center gap-2.5 shrink-0">
+      <!-- eKosha icon: navy ring + gold tree + rupee-style lines -->
+      <svg width="40" height="32" viewBox="0 0 44 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <clipPath id="nav-circle-clip">
+            <circle cx="17" cy="19" r="14.5"/>
+          </clipPath>
+        </defs>
+        <circle cx="17" cy="19" r="14.5" fill="white"/>
+        <g clip-path="url(#nav-circle-clip)">
+          <!-- Trunk -->
+          <rect x="15.2" y="27" width="3.6" height="8" rx="1.8" fill="#C9A227"/>
+          <!-- Center leaf -->
+          <ellipse cx="17" cy="13" rx="3.2" ry="5.5" fill="#C9A227"/>
+          <!-- Upper-left leaf -->
+          <ellipse cx="10.5" cy="16.5" rx="3.2" ry="5.5" fill="#C9A227" transform="rotate(-40 10.5 16.5)"/>
+          <!-- Upper-right leaf -->
+          <ellipse cx="23.5" cy="16.5" rx="3.2" ry="5.5" fill="#C9A227" transform="rotate(40 23.5 16.5)"/>
+          <!-- Lower-left leaf -->
+          <ellipse cx="6.5" cy="22" rx="3.2" ry="5.5" fill="#C9A227" transform="rotate(-28 6.5 22)"/>
+          <!-- Lower-right leaf -->
+          <ellipse cx="27.5" cy="22" rx="3.2" ry="5.5" fill="#C9A227" transform="rotate(28 27.5 22)"/>
+          <!-- Lowest-left leaf -->
+          <ellipse cx="10.5" cy="26.5" rx="3.2" ry="5.5" fill="#C9A227" transform="rotate(-12 10.5 26.5)"/>
+          <!-- Lowest-right leaf -->
+          <ellipse cx="23.5" cy="26.5" rx="3.2" ry="5.5" fill="#C9A227" transform="rotate(12 23.5 26.5)"/>
+        </g>
+        <!-- Navy ring drawn on top so it cleanly borders the leaves -->
+        <circle cx="17" cy="19" r="14.5" fill="none" stroke="#0E2240" stroke-width="2.4"/>
+        <!-- Two horizontal lines (₹-style) extending from top-right of ring -->
+        <line x1="29.5" y1="10" x2="43" y2="10" stroke="#0E2240" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="30.5" y1="14.5" x2="43" y2="14.5" stroke="#0E2240" stroke-width="2.2" stroke-linecap="round"/>
       </svg>
       <span class="text-xl font-bold text-brand-navy tracking-tight">eKosha</span>
     </a>
@@ -38,13 +65,13 @@ const navLinks = [
     <div class="hidden md:flex items-center gap-3">
       <a
         href={APP_URL}
-        class="text-sm font-medium text-brand-navy hover:text-brand-teal transition-colors duration-150"
+        class="text-sm font-medium text-brand-navy hover:text-brand-gold transition-colors duration-150"
       >
         Log In
       </a>
       <a
         href={APP_URL}
-        class="text-sm font-semibold bg-brand-teal text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-150 shadow-sm"
+        class="text-sm font-semibold bg-brand-gold text-brand-navy px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-150 shadow-sm"
       >
         Get Started
       </a>
@@ -53,7 +80,7 @@ const navLinks = [
     <!-- Mobile: only Get Started -->
     <a
       href={APP_URL}
-      class="md:hidden text-sm font-semibold bg-brand-teal text-white px-4 py-2 rounded-lg"
+      class="md:hidden text-sm font-semibold bg-brand-gold text-brand-navy px-4 py-2 rounded-lg"
     >
       Get Started
     </a>

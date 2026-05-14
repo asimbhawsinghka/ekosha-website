@@ -30,19 +30,23 @@ const faqs = [
   },
 ];
 ---
-<section id="faq" class="bg-white py-20">
+<section id="faq" class="bg-white py-24">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+    <div class="text-center mb-5">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-4 tracking-tight">
         Frequently Asked Questions
       </h2>
       <p class="text-brand-muted text-lg">Everything you need to know about eKosha.</p>
     </div>
+    <!-- Gold rule -->
+    <div class="flex justify-center mb-14">
+      <div class="w-14 h-1 bg-brand-gold rounded-full"></div>
+    </div>
 
     <div class="space-y-3">
       {faqs.map(faq => (
-        <details class="group bg-brand-bg rounded-xl border border-gray-100 overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-brand-navy hover:text-brand-teal transition-colors">
+        <details class="group bg-brand-bg rounded-xl border border-brand-navy/10 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-brand-navy hover:text-brand-gold transition-colors">
             {faq.q}
             <svg
               class="w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180 text-brand-muted"
@@ -56,7 +60,7 @@ const faqs = [
               />
             </svg>
           </summary>
-          <div class="px-6 pb-5 text-brand-muted leading-relaxed text-sm">
+          <div class="px-6 pb-5 text-brand-muted leading-relaxed text-sm border-t border-brand-navy/8">
             {faq.a}
           </div>
         </details>
