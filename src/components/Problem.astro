@@ -17,22 +17,28 @@ const problems = [
   },
 ];
 ---
-<section class="bg-brand-bg py-20">
+<section class="bg-brand-bg py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+    <div class="text-center mb-5">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-4 tracking-tight">
         When the unexpected happens, your family shouldn't be left guessing.
       </h2>
       <p class="text-brand-muted max-w-2xl mx-auto text-lg">
         Most families have no single, safe, organised record of their financial assets.
       </p>
     </div>
+    <!-- Gold rule -->
+    <div class="flex justify-center mb-14">
+      <div class="w-14 h-1 bg-brand-gold rounded-full"></div>
+    </div>
 
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
       {problems.map(p => (
-        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-          <div class="text-4xl mb-5">{p.icon}</div>
-          <h3 class="text-lg font-semibold text-brand-navy mb-3">{p.title}</h3>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-brand-navy/8">
+          <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-3xl mb-5">
+            {p.icon}
+          </div>
+          <h3 class="text-lg font-bold text-brand-navy mb-3">{p.title}</h3>
           <p class="text-brand-muted leading-relaxed">{p.body}</p>
         </div>
       ))}

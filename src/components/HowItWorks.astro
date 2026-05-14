@@ -3,27 +3,30 @@ const steps = [
   {
     num: '01',
     badgeBg: 'bg-brand-navy',
+    badgeText: 'text-white',
     title: 'Add your assets',
     body: 'Add bank accounts, investments, properties, and insurance in under two minutes each. Upload supporting documents directly from your phone.',
   },
   {
     num: '02',
     badgeBg: 'bg-brand-gold',
+    badgeText: 'text-brand-navy',
     title: 'Choose who sees what',
     body: 'Grant trusted family members access to the full vault or only specific assets — with view-only or edit permissions that you control.',
   },
   {
     num: '03',
     badgeBg: 'bg-brand-navy',
+    badgeText: 'text-white',
     title: "They're ready when it matters most",
     body: 'When something unexpected happens, your family knows exactly what you own, where it is, and how to claim it — without scrambling.',
   },
 ];
 ---
-<section id="how-it-works" class="bg-brand-bg py-20">
+<section id="how-it-works" class="bg-brand-bg py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+    <div class="text-center mb-5">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-4 tracking-tight">
         Set Up in Minutes
       </h2>
       <p class="text-brand-muted max-w-2xl mx-auto text-lg">
@@ -31,14 +34,18 @@ const steps = [
         technical experience.
       </p>
     </div>
+    <!-- Gold rule -->
+    <div class="flex justify-center mb-14">
+      <div class="w-14 h-1 bg-brand-gold rounded-full"></div>
+    </div>
 
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
       {steps.map(s => (
         <div class="text-center">
-          <div class={`w-16 h-16 rounded-full ${s.badgeBg} text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6`}>
+          <div class={`w-16 h-16 rounded-full ${s.badgeBg} ${s.badgeText} text-2xl font-extrabold flex items-center justify-center mx-auto mb-6 shadow-md`}>
             {s.num}
           </div>
-          <h3 class="text-xl font-semibold text-brand-navy mb-3">{s.title}</h3>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">{s.title}</h3>
           <p class="text-brand-muted leading-relaxed">{s.body}</p>
         </div>
       ))}
