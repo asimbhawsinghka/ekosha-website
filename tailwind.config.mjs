@@ -7,11 +7,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          navy: '#0D3B66',
-          teal: '#00A896',
-          bg: '#F3F7FB',
-          text: '#102A43',
-          muted: '#627D98',
+          navy: '#0E2240',
+          gold: '#E0B341',
+          bg: '#F6F5F0',
+          text: '#1A1A1A',
+          muted: '#4A4A4A',
+          tertiary: '#0D3B66',
         },
       },
       fontFamily: {
