@@ -49,6 +49,18 @@ const ogImage = new URL(image, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "eKosha",
+        "url": "https://ekosha.co.in",
+        "description": "eKosha is a private encrypted vault for Indian families to securely store, organise and share financial assets across generations.",
+        "applicationCategory": "FinanceApplication"
+      }
+    </script>
   </head>
   <body class="font-sans text-brand-text bg-white antialiased">
     <slot />
