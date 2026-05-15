@@ -5,51 +5,184 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="Privacy Policy — eKosha"
-  description="Learn how eKosha collects, uses and protects your personal information."
+  description="Learn how eKosha collects, uses and protects your personal information in accordance with the DPDP Act 2023."
 >
   <Nav />
   <main class="max-w-3xl mx-auto px-6 py-24">
-    <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">Privacy Policy</h1>
-    <p class="text-brand-muted mb-10">Last updated: May 2025</p>
+    <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-2">Privacy Policy</h1>
+    <p class="text-brand-muted mb-1 text-sm">Last updated: April 12, 2026</p>
+    <p class="text-brand-muted mb-10 text-sm">Effective date: April 12, 2026 &nbsp;·&nbsp; Policy version: 1.0</p>
 
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-brand-navy mb-3">What We Collect</h2>
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">About eKosha</h2>
       <p class="text-brand-text leading-relaxed">
-        We collect information you provide directly — such as your name, email address, and
-        financial asset details you choose to store in your vault. We also collect device and
-        usage data (app version, crash reports) to improve reliability and performance.
-        We do not collect or store your raw financial account passwords or PINs.
+        eKosha ("we", "our", "us") is a personal asset management and inheritance planning application.
+        We are committed to protecting your personal data in accordance with the
+        <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong> and other applicable laws.
       </p>
     </section>
 
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-brand-navy mb-3">How We Protect Your Data</h2>
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">1. Data We Collect</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-brand-text border-collapse">
+          <thead>
+            <tr class="bg-brand-bg">
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Category</th>
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Examples</th>
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Identity data</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Full name, date of birth, gender</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Create and maintain your profile</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Contact data</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Email address, phone number</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Account authentication, notifications</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Asset data</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Financial account details, insurance policies, property records</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Core service — asset vault</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Usage data</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Feature interactions, session timestamps</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Improve app performance</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Device data</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Device type, OS version</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Crash reporting, compatibility</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">2. How We Use Your Data</h2>
+      <p class="text-brand-text leading-relaxed mb-3">We process your data solely for the purposes to which you have consented:</p>
+      <ol class="list-decimal list-inside space-y-2 text-brand-text text-sm leading-relaxed">
+        <li><strong>Profile &amp; Asset Data</strong> — to provide, operate, and maintain the eKosha service.</li>
+        <li><strong>Cross-Border Transfer</strong> — to store and process your data on Firebase, Resend, and RevenueCat servers (located in the United States).</li>
+        <li><strong>Analytics</strong> <em>(optional)</em> — to understand how users interact with the app and improve features.</li>
+        <li><strong>Marketing Notifications</strong> <em>(optional)</em> — to inform you about new features, tips, and promotions.</li>
+      </ol>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">3. Data Sharing and Processors</h2>
+      <p class="text-brand-text leading-relaxed mb-4">
+        We share your data only with the following processors, and only as necessary. We do <strong>not</strong> sell your personal data to any third party.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-brand-text border-collapse">
+          <thead>
+            <tr class="bg-brand-bg">
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Processor</th>
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Country</th>
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Google Firebase</td>
+              <td class="px-4 py-2 border border-brand-navy/10">United States</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Database, authentication, analytics, crash reporting</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Resend</td>
+              <td class="px-4 py-2 border border-brand-navy/10">United States</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Transactional email delivery</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">RevenueCat</td>
+              <td class="px-4 py-2 border border-brand-navy/10">United States</td>
+              <td class="px-4 py-2 border border-brand-navy/10">In-app subscription management</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">4. Cross-Border Data Transfer</h2>
       <p class="text-brand-text leading-relaxed">
-        All vault data is encrypted at rest using AES-256 and in transit using TLS 1.3.
-        Your vault contents are end-to-end encrypted — even the eKosha team cannot read
-        your asset details. Access to the app is protected by your device biometrics or PIN,
-        and session keys are never persisted in plain text.
+        Your data is transferred to and stored in the <strong>United States</strong>. This transfer is covered by your explicit consent given during onboarding.
+        The safeguards in place include contractual clauses and the data processors' compliance with applicable international data protection standards.
       </p>
     </section>
 
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-brand-navy mb-3">Third-Party Services</h2>
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">5. Data Retention</h2>
       <p class="text-brand-text leading-relaxed">
-        We use <strong>Firebase</strong> (Google) for authentication, real-time database, and
-        cloud storage. Firebase processes data in accordance with Google's privacy policies and
-        holds certifications including ISO 27001 and SOC 2. We do not sell, rent, or share
-        your personal data with advertisers or any third party for marketing purposes.
+        We retain your data for as long as your account is active, plus a maximum of <strong>30 days</strong> after account deletion (grace period for cancellation).
+        Audit logs related to consent are retained for <strong>7 years</strong> as required by applicable law.
       </p>
     </section>
 
     <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-brand-navy mb-3">Contact</h2>
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">6. Your Rights Under the DPDP Act 2023</h2>
+      <p class="text-brand-text leading-relaxed mb-3">As a Data Principal, you have the following rights:</p>
+      <ul class="space-y-2 text-sm text-brand-text">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Information</strong> — know what data we hold about you.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Correction</strong> — request correction of inaccurate or incomplete data.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Erasure</strong> — request deletion of your personal data (subject to legal hold obligations).</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Grievance Redressal</strong> — lodge a complaint with our Grievance Officer.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Nominate</strong> — nominate a person to exercise rights on your behalf in the event of death or incapacity.</span></li>
+      </ul>
+      <p class="text-brand-text text-sm mt-3">To exercise these rights, please contact our Grievance Officer (see Section 9).</p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">7. Data Security</h2>
+      <p class="text-brand-text leading-relaxed mb-3">We implement the following security measures:</p>
+      <ul class="space-y-2 text-sm text-brand-text">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>AES-256-GCM field-level encryption for sensitive asset data.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>PBKDF2 key derivation with per-user salt.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Firebase Security Rules restricting access by authenticated UID only.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>PIN / biometric lock on mobile devices.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Immutable audit logs for all data access and changes.</span></li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">8. Children's Data</h2>
       <p class="text-brand-text leading-relaxed">
-        For privacy-related questions or data deletion requests, email us at{' '}
-        <a href="mailto:support@ekosha.co.in" class="text-brand-gold underline">
-          support@ekosha.co.in
-        </a>.
-        We will respond within 7 business days.
+        eKosha is intended for users <strong>18 years of age and older</strong>. We do not knowingly collect personal data from minors.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">9. Grievance Officer</h2>
+      <p class="text-brand-text leading-relaxed">
+        In accordance with Section 13 of the DPDP Act 2023, we have designated a Grievance Officer. You may contact them at:
+      </p>
+      <div class="mt-3 text-sm text-brand-text space-y-1">
+        <p><strong>Email:</strong> <a href="mailto:grievance@ekosha.co.in" class="text-brand-gold underline">grievance@ekosha.co.in</a></p>
+        <p><strong>Designation:</strong> Privacy Team, eKosha</p>
+        <p><strong>Response time:</strong> Within 30 days of receipt of your complaint.</p>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">10. Changes to This Policy</h2>
+      <p class="text-brand-text leading-relaxed">
+        We will notify you of any material changes to this policy through the app. Continued use after notification constitutes acceptance of the updated policy.
+        Where required by law, we will seek fresh consent.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">11. Contact Us</h2>
+      <p class="text-brand-text leading-relaxed">
+        For privacy-related questions, email us at{' '}
+        <a href="mailto:privacy@ekosha.co.in" class="text-brand-gold underline">privacy@ekosha.co.in</a>.
       </p>
     </section>
   </main>

@@ -2,22 +2,16 @@
 const APP_URL = 'https://app.ekosha.co.in';
 
 const freeFeatures = [
-  'Up to 5 assets',
-  'Bank & insurance types',
-  'Share with 1 person',
-  '1 nominee',
+  'Up to 5 assets (any type)',
+  '1 share (nominees, co-owners & explicit shares)',
   'Android & Web access',
   'AES-256 encryption',
 ];
 
 const premiumFeatures = [
-  'Unlimited assets',
+  'Up to 50 assets (any type)',
+  'Up to 10 shares (nominees, co-owners & explicit shares)',
   'All asset types',
-  'Unlimited sharing',
-  'Unlimited nominees',
-  'Inheritance allocation',
-  'Portfolio insights',
-  'Document attachments',
   'Priority support',
 ];
 ---
@@ -77,12 +71,40 @@ const premiumFeatures = [
         </div>
 
         <div class="px-8 pb-8 pt-8">
-          <h3 class="text-lg font-bold text-white mb-1">Premium</h3>
-          <p class="text-white/55 text-sm mb-6">For families who need everything</p>
-          <div class="mb-8">
-            <span class="text-4xl font-extrabold text-white">₹199</span>
+          <h3 class="text-lg font-bold text-white mb-1">eKosha Premium</h3>
+          <p class="text-white/55 text-sm mb-4">For families who need everything</p>
+
+          <!-- Monthly / Annual toggle -->
+          <div class="flex items-center gap-1 bg-white/10 rounded-full p-1 mb-6 w-fit">
+            <button
+              id="pricing-monthly-btn"
+              class="pricing-toggle-btn text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150 bg-brand-gold text-brand-navy"
+            >
+              Monthly
+            </button>
+            <button
+              id="pricing-annual-btn"
+              class="pricing-toggle-btn text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150 text-white/70"
+            >
+              Annual
+            </button>
+          </div>
+
+          <!-- Monthly price -->
+          <div id="pricing-monthly" class="mb-2">
+            <span class="text-4xl font-extrabold text-white">₹99</span>
             <span class="text-white/55 text-sm ml-1">/ month</span>
           </div>
+
+          <!-- Annual price -->
+          <div id="pricing-annual" class="mb-2 hidden">
+            <span class="text-4xl font-extrabold text-white">₹899</span>
+            <span class="text-white/55 text-sm ml-1">/ year</span>
+            <span class="ml-2 text-xs font-semibold bg-brand-gold/20 text-brand-gold px-2 py-0.5 rounded-full">Save ₹289</span>
+          </div>
+
+          <p class="text-white/40 text-xs mb-8">7-day free trial · cancel anytime</p>
+
           <ul class="space-y-3 mb-8 text-sm text-white/75">
             {premiumFeatures.map(f => (
               <li class="flex items-center gap-2.5">
@@ -97,7 +119,7 @@ const premiumFeatures = [
             href={APP_URL}
             class="block w-full text-center bg-brand-gold text-brand-navy font-bold py-3 rounded-xl hover:bg-opacity-90 transition-all duration-150 shadow-lg"
           >
-            Start Premium Trial
+            Start 7-Day Free Trial
           </a>
         </div>
       </div>
@@ -105,3 +127,34 @@ const premiumFeatures = [
     </div>
   </div>
 </section>
+
+<script>
+  const monthlyBtn = document.getElementById('pricing-monthly-btn');
+  const annualBtn = document.getElementById('pricing-annual-btn');
+  const monthlyPrice = document.getElementById('pricing-monthly');
+  const annualPrice = document.getElementById('pricing-annual');
+
+  const activeClass = ['bg-brand-gold', 'text-brand-navy'];
+  const inactiveClass = ['text-white/70'];
+
+  function setMonthly() {
+    monthlyPrice?.classList.remove('hidden');
+    annualPrice?.classList.add('hidden');
+    monthlyBtn?.classList.add(...activeClass);
+    monthlyBtn?.classList.remove(...inactiveClass);
+    annualBtn?.classList.remove(...activeClass);
+    annualBtn?.classList.add(...inactiveClass);
+  }
+
+  function setAnnual() {
+    annualPrice?.classList.remove('hidden');
+    monthlyPrice?.classList.add('hidden');
+    annualBtn?.classList.add(...activeClass);
+    annualBtn?.classList.remove(...inactiveClass);
+    monthlyBtn?.classList.remove(...activeClass);
+    monthlyBtn?.classList.add(...inactiveClass);
+  }
+
+  monthlyBtn?.addEventListener('click', setMonthly);
+  annualBtn?.addEventListener('click', setAnnual);
+</script>
