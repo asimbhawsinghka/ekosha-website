@@ -5,28 +5,71 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
   title = 'eKosha — Private Vault for Family Wealth',
   description = 'eKosha is a private encrypted vault for Indian families to securely store, organise and share financial assets across generations.',
   image = '/og-image.png',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
+
+const siteURL = Astro.site?.toString().replace(/\/$/, '') ?? 'https://ekosha.co.in';
+
+// Site-wide structured data. Kept as a @graph so Organization, WebSite and the
+// app itself are cross-referenced. No ratings are fabricated.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteURL}/#organization`,
+      name: 'eKosha',
+      url: `${siteURL}/`,
+      logo: `${siteURL}/images/logo.png`,
+      description:
+        'eKosha is a private encrypted vault for Indian families to securely store, organise and share financial assets across generations.',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteURL}/#website`,
+      url: `${siteURL}/`,
+      name: 'eKosha',
+      inLanguage: 'en-IN',
+      publisher: { '@id': `${siteURL}/#organization` },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'eKosha',
+      operatingSystem: 'Android, Web',
+      applicationCategory: 'FinanceApplication',
+      url: 'https://app.ekosha.co.in',
+      publisher: { '@id': `${siteURL}/#organization` },
+      offers: [
+        { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'INR' },
+        { '@type': 'Offer', name: 'Premium', price: '99', priceCurrency: 'INR' },
+      ],
+    },
+  ],
+};
 ---
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-IN" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0D3B66" />
 
     <!-- Primary -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -35,6 +78,9 @@ const ogImage = new URL(image, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="eKosha — private encrypted vault for family wealth" />
     <meta property="og:site_name" content="eKosha" />
     <meta property="og:locale" content="en_IN" />
 
@@ -43,6 +89,7 @@ const ogImage = new URL(image, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="eKosha — private encrypted vault for family wealth" />
 
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,16 +100,7 @@ const ogImage = new URL(image, Astro.site);
     />
 
     <!-- Structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "eKosha",
-        "url": "https://ekosha.co.in",
-        "description": "eKosha is a private encrypted vault for Indian families to securely store, organise and share financial assets across generations.",
-        "applicationCategory": "FinanceApplication"
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Product analytics (PostHog) -->
     <Analytics />

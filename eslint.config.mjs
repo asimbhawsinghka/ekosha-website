@@ -9,6 +9,13 @@ export default [
   ...tseslint.configs.recommended,
   ...astro.configs['flat/recommended'],
   {
+    // Build-time Node scripts (e.g. OG image generation).
+    files: ['scripts/**/*.{js,mjs}'],
+    languageOptions: {
+      globals: { Buffer: 'readonly', console: 'readonly', process: 'readonly', URL: 'readonly' },
+    },
+  },
+  {
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       // Astro's build pipeline auto-generates /// <reference path="../.astro/types.d.ts" />
