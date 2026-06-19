@@ -29,7 +29,19 @@ const faqs = [
     a: 'A password manager stores login credentials. eKosha stores structured financial asset records — account numbers, policy details, property documents, nominee information, and valuations — designed specifically for wealth inheritance and family transparency.',
   },
 ];
+
+// FAQPage structured data so these Q&As are eligible for FAQ rich results.
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 ---
+<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
 <section id="faq" class="bg-white py-24">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-5">

@@ -1,0 +1,54 @@
+---
+// PostHog product analytics for the marketing site.
+//
+// Privacy-first config: first-party localStorage only (no third-party cookies),
+// person profiles for identified visitors only, autocapture and session
+// recording disabled. We track automatic pageviews plus explicit CTA clicks.
+//
+// Config comes from PUBLIC_ env vars (the project API key is safe to expose in
+// client code). PostHog is loaded via a *dynamic* import gated on the key, so
+// when PUBLIC_POSTHOG_KEY is unset the whole block is tree-shaken away and the
+// posthog-js bundle is never shipped.
+---
+<script>
+  if (import.meta.env.PUBLIC_POSTHOG_KEY) {
+    import('posthog-js').then(({ default: posthog }) => {
+      posthog.init(import.meta.env.PUBLIC_POSTHOG_KEY, {
+        api_host: import.meta.env.PUBLIC_POSTHOG_HOST || 'https://eu.i.posthog.com',
+        persistence: 'localStorage',
+        person_profiles: 'identified_only',
+        respect_dnt: true,
+        autocapture: false,
+        capture_pageview: true,
+        disable_session_recording: true,
+        disable_surveys: true,
+      });
+
+      // One delegated click listener for all explicit events, so individual
+      // components stay free of analytics code.
+      document.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+
+        // Any anchor tagged with data-cta fires a cta_click labelled by that
+        // attribute. Survives future CTAs.
+        const cta = event.target.closest('[data-cta]');
+        if (cta) {
+          posthog.capture('cta_click', {
+            cta: cta.getAttribute('data-cta'),
+            href: cta.getAttribute('href'),
+            path: window.location.pathname,
+          });
+          return;
+        }
+
+        // Pricing monthly/annual toggle (buttons live in Pricing.astro).
+        const toggle = event.target.closest('.pricing-toggle-btn');
+        if (toggle) {
+          posthog.capture('pricing_billing_toggle', {
+            plan: toggle.id === 'pricing-annual-btn' ? 'annual' : 'monthly',
+          });
+        }
+      });
+    });
+  }
+</script>
