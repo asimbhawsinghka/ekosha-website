@@ -34,12 +34,14 @@ const navLinks = [
     <div class="hidden md:flex items-center gap-3">
       <a
         href={APP_URL}
+        data-cta="nav_login"
         class="text-sm font-medium text-brand-navy hover:text-brand-gold transition-colors duration-150"
       >
         Log In
       </a>
       <a
         href={APP_URL}
+        data-cta="nav_get_started"
         class="text-sm font-semibold bg-brand-gold text-brand-navy px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-150 shadow-sm"
       >
         Get Started
@@ -49,6 +51,7 @@ const navLinks = [
     <!-- Mobile: only Get Started -->
     <a
       href={APP_URL}
+      data-cta="nav_get_started_mobile"
       class="md:hidden text-sm font-semibold bg-brand-gold text-brand-navy px-4 py-2 rounded-lg"
     >
       Get Started

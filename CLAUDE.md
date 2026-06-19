@@ -77,6 +77,20 @@ Define as a local constant `const APP_URL = 'https://app.ekosha.co.in'` in each 
 - FAQ accordion uses native `<details class="group">` / `<summary>` only
 - Nav has no mobile hamburger JS — mobile shows only logo + CTA button
 - `group-open:rotate-180` Tailwind variant handles chevron animation in FAQ
+- **Exception — analytics:** `src/components/Analytics.astro` ships a small bundled
+  `posthog-js` script (loaded in `Layout.astro` `<head>`). This is the only intentional
+  runtime JS beyond the pricing toggle.
+
+### Analytics (PostHog)
+- Separate PostHog **website** project (EU Cloud), independent of the app's prod/stage projects.
+- Privacy-first: first-party `localStorage` only (no third-party cookies), `person_profiles:
+  'identified_only'`, `respect_dnt`, autocapture and session recording **off**.
+- Tracks automatic `$pageview` plus a `cta_click` event for any anchor with a `data-cta`
+  attribute (a single delegated listener in `Analytics.astro` reads it). When adding a new
+  app-bound CTA, give it a `data-cta="<name>"` attribute.
+- Config via `PUBLIC_POSTHOG_KEY` / `PUBLIC_POSTHOG_HOST` env vars (see `.env.example`). The
+  key is public/safe in client code. Empty key → analytics no-ops. Set in Netlify env vars.
+- PostHog EU domains are allowlisted in the `netlify.toml` CSP.
 
 ### TypeScript
 - Strict mode via `astro/tsconfigs/strict`

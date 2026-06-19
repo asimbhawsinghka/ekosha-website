@@ -1,4 +1,6 @@
 ---
+import Analytics from '../components/Analytics.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -61,6 +63,9 @@ const ogImage = new URL(image, Astro.site);
         "applicationCategory": "FinanceApplication"
       }
     </script>
+
+    <!-- Product analytics (PostHog) -->
+    <Analytics />
   </head>
   <body class="font-sans text-brand-text bg-white antialiased">
     <slot />
