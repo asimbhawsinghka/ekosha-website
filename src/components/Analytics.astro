@@ -4,7 +4,9 @@
 // posthog-js, avoiding the "cannot resolve dynamic import" build error.
 // Rendered only when PUBLIC_POSTHOG_KEY is set at build time.
 const phKey = import.meta.env.PUBLIC_POSTHOG_KEY ?? '';
-const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com';
+// Route through Netlify reverse proxy so ad blockers can't intercept PostHog traffic.
+// Falls back to direct EU endpoint for local dev where /ingest/* isn't proxied.
+const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? (phKey ? '/ingest' : 'https://eu.i.posthog.com');
 ---
 {phKey && (
   <script is:inline define:vars={{ phKey, phHost }}>
