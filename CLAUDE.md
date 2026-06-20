@@ -85,10 +85,11 @@ Define as a local constant `const APP_URL = 'https://app.ekosha.co.in'` in each 
 - **One project per product.** The website reports into the app's **PROD** PostHog project (EU
   Cloud), the same project all app surfaces use — this is what enables the website→app conversion
   funnel (PostHog can't join a person across projects). `PUBLIC_POSTHOG_KEY` = the PROD key.
-- **Surface labelling:** every event is tagged `surface: 'marketing-website'` via
-  `posthog.register(...)`, so website activity is distinguishable from the app's
-  `web-app`/`android`/`ios` surfaces (which the Flutter app sets the same way). Filter/break-down
-  any insight by `surface`.
+- **Surface labelling:** every event is tagged with two orthogonal super-properties via
+  `posthog.register(...)`, matching the app's convention — `surface` (product area:
+  `marketing-website` vs the app's `app`) and `platform` (runtime: the site is always `web`; the
+  Flutter app sets `web`/`android`/`ios`). Filter/break-down any insight by `surface` and/or
+  `platform`.
 - **Identity:** `persistence: 'localStorage+cookie'` with `cross_subdomain_cookie` shares the
   anonymous id via a first-party cookie on `.ekosha.co.in`, so the journey links to the web app
   at `app.ekosha.co.in`. `person_profiles: 'identified_only'` (anonymous visitors don't create
