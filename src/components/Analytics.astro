@@ -31,8 +31,9 @@ const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? (phKey ? '/ingest' : 'http
     });
 
     // Label every event so website activity is distinguishable from the app's
-    // web/android/ios surfaces within the shared PROD project.
-    posthog.register({ surface: 'marketing-website' });
+    // surfaces within the shared PROD project. Two orthogonal axes, matching the
+    // app: surface = product area, platform = runtime. Website is always web.
+    posthog.register({ surface: 'marketing-website', platform: 'web' });
 
     document.addEventListener('click', function(event) {
       if (!(event.target instanceof Element)) return;
