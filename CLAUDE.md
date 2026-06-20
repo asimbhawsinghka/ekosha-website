@@ -82,15 +82,24 @@ Define as a local constant `const APP_URL = 'https://app.ekosha.co.in'` in each 
   runtime JS beyond the pricing toggle.
 
 ### Analytics (PostHog)
-- Separate PostHog **website** project (EU Cloud), independent of the app's prod/stage projects.
-- Privacy-first: first-party `localStorage` only (no third-party cookies), `person_profiles:
-  'identified_only'`, `respect_dnt`, autocapture and session recording **off**.
-- Tracks automatic `$pageview` plus a `cta_click` event for any anchor with a `data-cta`
-  attribute (a single delegated listener in `Analytics.astro` reads it). When adding a new
-  app-bound CTA, give it a `data-cta="<name>"` attribute.
-- Config via `PUBLIC_POSTHOG_KEY` / `PUBLIC_POSTHOG_HOST` env vars (see `.env.example`). The
-  key is public/safe in client code. Empty key → analytics no-ops. Set in Netlify env vars.
-- PostHog EU domains are allowlisted in the `netlify.toml` CSP.
+- **One project per product.** The website reports into the app's **PROD** PostHog project (EU
+  Cloud), the same project all app surfaces use — this is what enables the website→app conversion
+  funnel (PostHog can't join a person across projects). `PUBLIC_POSTHOG_KEY` = the PROD key.
+- **Surface labelling:** every event is tagged `surface: 'marketing-website'` via
+  `posthog.register(...)`, so website activity is distinguishable from the app's
+  `web-app`/`android`/`ios` surfaces (which the Flutter app sets the same way). Filter/break-down
+  any insight by `surface`.
+- **Identity:** `persistence: 'localStorage+cookie'` with `cross_subdomain_cookie` shares the
+  anonymous id via a first-party cookie on `.ekosha.co.in`, so the journey links to the web app
+  at `app.ekosha.co.in`. `person_profiles: 'identified_only'` (anonymous visitors don't create
+  person profiles), `respect_dnt`, autocapture and session recording **off** (minimal footprint).
+- Tracks automatic `$pageview` plus `cta_click` (any anchor with a `data-cta` attribute) and
+  `pricing_billing_toggle`, via a single delegated listener in `Analytics.astro`. When adding a
+  new app-bound CTA, give it a `data-cta="<name>"` attribute.
+- Loaded via PostHog's inline CDN snippet (`is:inline`) and routed through the Netlify `/ingest`
+  reverse proxy (see `netlify.toml`) so ad blockers can't drop events; falls back to the direct
+  EU endpoint in local dev. Config via `PUBLIC_POSTHOG_KEY` / `PUBLIC_POSTHOG_HOST` env vars (see
+  `.env.example`); empty key → analytics no-ops. Set in Netlify env vars.
 
 ### SEO
 - `Layout.astro` holds per-page `title`/`description`/`image`/`noindex` props, canonical URL,
