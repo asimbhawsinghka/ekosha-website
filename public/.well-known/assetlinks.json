@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ekosha.app",
+      "sha256_cert_fingerprints": [
+        "F0:A5:CD:B3:1E:E9:84:86:C1:58:83:ED:25:2B:41:D6:2C:AB:3D:3F:28:FE:7A:3B:14:71:99:4B:FF:92:15:74"
+      ]
+    }
+  }
+]
