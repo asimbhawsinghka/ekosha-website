@@ -24,8 +24,8 @@ const background = Buffer.from(`
   <circle cx="1080" cy="120" r="220" fill="#E0B341" opacity="0.07"/>
 
   <text x="96" y="300" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800" fill="#ffffff">eKosha</text>
-  <text x="98" y="372" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="600" fill="#E0B341">Private encrypted vault for family wealth</text>
-  <text x="98" y="430" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400" fill="#ffffff" opacity="0.7">Store, organise &amp; securely pass on financial assets.</text>
+  <text x="98" y="372" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="600" fill="#E0B341">Help your family stay financially prepared</text>
+  <text x="98" y="430" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400" fill="#ffffff" opacity="0.7">Organise what your family depends on — and share it with people you trust.</text>
 
   <rect x="96" y="500" width="560" height="2" fill="#ffffff" opacity="0.15"/>
   <text x="96" y="552" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#ffffff" opacity="0.85">Encrypted · Private · Built for Indian families</text>

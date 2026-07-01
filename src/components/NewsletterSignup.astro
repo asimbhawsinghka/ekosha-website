@@ -1,0 +1,65 @@
+---
+// Free newsletter capture via Netlify Forms — the site is already hosted on
+// Netlify, so this adds no third-party dependency. Netlify detects the form
+// from the built static HTML at deploy time; submissions appear in the Netlify
+// dashboard (Forms tab). Wire an ESP (e.g. the app's existing Resend) later to
+// send campaigns. CSP `form-action 'self'` already permits the same-origin POST.
+interface Props {
+  variant?: 'light' | 'dark';
+  heading?: string;
+  subtext?: string;
+}
+const {
+  variant = 'light',
+  heading = 'Get preparedness tips in your inbox',
+  subtext = 'Occasional, practical notes on organising your family’s finances. No spam, unsubscribe anytime.',
+} = Astro.props;
+const dark = variant === 'dark';
+---
+<div class={`rounded-2xl p-8 ${dark ? 'bg-brand-navy border border-white/10' : 'bg-brand-bg border border-brand-navy/10'}`}>
+  <h3 class={`text-xl font-bold mb-2 ${dark ? 'text-white' : 'text-brand-navy'}`}>{heading}</h3>
+  <p class={`text-sm mb-5 ${dark ? 'text-white/60' : 'text-brand-muted'}`}>{subtext}</p>
+
+  <form
+    name="newsletter"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    action="/?newsletter=thanks"
+    data-newsletter-form
+    class="flex flex-col sm:flex-row gap-3"
+  >
+    <!-- Required by Netlify Forms for static (JS-rendered) submissions. -->
+    <input type="hidden" name="form-name" value="newsletter" />
+    <!-- Honeypot: real users never see or fill this. -->
+    <p class="hidden" aria-hidden="true">
+      <label>Leave this field empty: <input name="bot-field" /></label>
+    </p>
+
+    <label class="sr-only" for="newsletter-name">Name</label>
+    <input
+      id="newsletter-name"
+      name="name"
+      type="text"
+      autocomplete="name"
+      placeholder="First name"
+      class={`w-full sm:w-40 rounded-xl px-4 py-3 text-sm outline-none ${dark ? 'bg-white/10 text-white placeholder-white/40 border border-white/15 focus:border-brand-gold' : 'bg-white text-brand-text placeholder-brand-muted border border-brand-navy/15 focus:border-brand-gold'}`}
+    />
+    <label class="sr-only" for="newsletter-email">Email</label>
+    <input
+      id="newsletter-email"
+      name="email"
+      type="email"
+      required
+      autocomplete="email"
+      placeholder="you@example.com"
+      class={`w-full flex-1 rounded-xl px-4 py-3 text-sm outline-none ${dark ? 'bg-white/10 text-white placeholder-white/40 border border-white/15 focus:border-brand-gold' : 'bg-white text-brand-text placeholder-brand-muted border border-brand-navy/15 focus:border-brand-gold'}`}
+    />
+    <button
+      type="submit"
+      class="shrink-0 inline-flex items-center justify-center bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-xl hover:bg-opacity-90 transition-all text-sm"
+    >
+      Subscribe
+    </button>
+  </form>
+</div>
