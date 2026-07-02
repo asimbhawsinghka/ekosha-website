@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = 'eKosha — Secure Vault for Family Financial Assets & Nominees',
-  description = 'A private, encrypted digital vault for Indian families to store, organise and share financial assets, documents, nominees and inheritance details.',
+  title = "eKosha — Your Family's Financial Safety Net, Organised & Secure",
+  description = 'eKosha helps Indian families stay financially prepared — a private, encrypted place to organise the assets, nominees and financial information your family depends on, and share it with the people you trust.',
   image = '/og-image.png',
   noindex = false,
 } = Astro.props;
@@ -32,7 +32,7 @@ const structuredData = {
       url: `${siteURL}/`,
       logo: `${siteURL}/images/logo.png`,
       description:
-        'eKosha is a private, encrypted digital vault for Indian families to store, organise and share financial assets, documents, nominee and inheritance details across generations.',
+        'eKosha helps Indian families stay financially prepared — a private, encrypted place to organise the assets, nominees and financial information a family depends on, and share it with the people they trust.',
     },
     {
       '@type': 'WebSite',
@@ -65,7 +65,7 @@ const structuredData = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="256x256" href="/images/logo.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#0D3B66" />
+    <meta name="theme-color" content="#0E2240" />
 
     <!-- Primary -->
     <title>{title}</title>
@@ -81,7 +81,7 @@ const structuredData = {
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="eKosha — private encrypted vault for family wealth" />
+    <meta property="og:image:alt" content="eKosha — help your family stay financially prepared" />
     <meta property="og:site_name" content="eKosha" />
     <meta property="og:locale" content="en_IN" />
 
@@ -90,7 +90,7 @@ const structuredData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="eKosha — private encrypted vault for family wealth" />
+    <meta name="twitter:image:alt" content="eKosha — help your family stay financially prepared" />
 
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -1,14 +1,25 @@
 # eKosha Website — Claude Code Context
 
 ## Project Overview
-Static marketing website for **eKosha**, a Flutter app (Android + Web) that is a private
-encrypted vault for Indian families to store and share financial assets. The site is deployed
-at https://ekosha.co.in and all CTAs point to the live app at https://app.ekosha.co.in.
+Static marketing website for **eKosha**, a Flutter app (Android + Web) for **family
+financial preparedness** — a private, encrypted place for Indian families to organise the
+assets, nominees and financial information they depend on, and share it with the people they
+trust. The site is deployed at https://ekosha.co.in and all CTAs point to the live app at
+https://app.ekosha.co.in.
+
+**Brand source of truth:** the `ekosha-foundation` repo. Positioning is *"Family Financial
+Preparedness"*; core message *"Know what you own, and what your family needs to do when it
+matters most."* Voice is **trustworthy, practical, dependable**. Avoid: "wealth management",
+"pass on wealth", "digital locker", "legacy planning", hype and fear-mongering. Describe only
+shipped v1 features (assets, co-owners, nominees, secure sharing) — liabilities/benefits are
+roadmap, not live.
 
 ## Tech Stack
 - **Framework**: Astro 4.16.0 (static output, no JS framework)
-- **Styling**: Tailwind CSS 3.4.14 via @astrojs/tailwind 5.1.3
-- **Font**: Inter (400/500/600/700) from Google Fonts
+- **Styling**: Tailwind CSS 3.4.14 via @astrojs/tailwind 5.1.3; `@tailwindcss/typography` for
+  the blog article body (`prose prose-ekosha`)
+- **Content**: Astro content collections (blog is Markdown, build-time) + `@astrojs/rss`
+- **Font**: Inter (400/500/600/700/800) from Google Fonts
 - **Deployment**: Netlify (NODE_VERSION=20, publish: dist)
 
 ## Commands
@@ -19,17 +30,19 @@ npm run preview  # Preview built site locally
 ```
 
 ## Brand Colors
-All colors are available via the `brand.*` Tailwind namespace:
+All colors are available via the `brand.*` Tailwind namespace. Navy + gold, matching the
+Flutter app (`app_colors.dart`).
 
-| Token       | Value   | Usage                          |
-|-------------|---------|--------------------------------|
-| brand.navy  | #0D3B66 | Primary, backgrounds, headings |
-| brand.teal  | #00A896 | Accent, CTAs, highlights       |
-| brand.bg    | #F3F7FB | Light section backgrounds      |
-| brand.text  | #102A43 | Body text                      |
-| brand.muted | #627D98 | Secondary text, icons          |
+| Token          | Value   | Usage                              |
+|----------------|---------|------------------------------------|
+| brand.navy     | #0E2240 | Primary, backgrounds, headings     |
+| brand.gold     | #E0B341 | Accent, CTAs, highlights           |
+| brand.bg       | #F6F5F0 | Light section backgrounds          |
+| brand.text     | #1A1A1A | Body text                          |
+| brand.muted    | #4A4A4A | Secondary text, icons              |
+| brand.tertiary | #0D3B66 | Mid-navy for gradient stops only   |
 
-Use: `text-brand-navy`, `bg-brand-teal`, `border-brand-muted`, etc.
+Use: `text-brand-navy`, `bg-brand-gold`, `border-brand-muted`, etc.
 
 ## File Structure
 ```
@@ -43,17 +56,43 @@ src/
     Security.astro     # 2-col security section (id="security")
     Pricing.astro      # 2-card pricing (id="pricing")
     FAQ.astro          # Native details/summary accordion (id="faq")
-    Footer.astro       # CTA band + bottom bar
+    Footer.astro       # CTA band + bottom bar (+ Blog link)
+    NewsletterSignup.astro # Netlify Forms email capture (blog + reusable)
   layouts/
     Layout.astro       # HTML shell with OG meta, Inter font
+    BlogPost.astro     # Article layout (Nav+Footer, prose body, BlogPosting JSON-LD, CTA)
+  content/
+    config.ts          # `blog` content collection schema (frontmatter contract)
+    blog/*.md          # Blog articles — one Markdown file per post
   pages/
     index.astro        # Imports all components in order
+    blog/index.astro   # Blog listing page
+    blog/[...slug].astro # Per-article route from the collection
+    rss.xml.js         # RSS feed at /rss.xml (@astrojs/rss)
     privacy.astro      # Privacy policy stub (4 sections)
     terms.astro        # Terms of service stub (4 sections)
+  assets/
+    blog/              # Generated on-brand article images (npm run blog:images)
   env.d.ts             # /// <reference types="astro/client" />
 public/
-  favicon.svg          # Navy square, teal shield, white checkmark
+  favicon.svg          # Navy ring, gold tree, white background
 ```
+
+### Blog
+- **No third-party service.** Articles are Markdown in `src/content/blog/`, compiled at build
+  time. Add a post by dropping a `.md` file with the frontmatter defined in
+  `src/content/config.ts` (`title`, `description`, `pubDate`, `author`, `tags`, `heroImage`,
+  `heroImageAlt`, `draft`). It appears on `/blog`, at `/blog/<slug>`, and in `/rss.xml`
+  automatically.
+- **Images** are on-brand PNGs generated by `scripts/generate-blog-images.mjs` (sharp + SVG,
+  same pattern as `og:image`) into `src/assets/blog/`, then optimised by `astro:assets`.
+  Regenerate with `npm run blog:images`. In-article images use relative paths so they're
+  optimised too.
+- **Newsletter:** `NewsletterSignup.astro` is a **Netlify Forms** form (`data-netlify="true"`,
+  honeypot `bot-field`). Zero new dependency (site is on Netlify); submissions land in the
+  Netlify **Forms** tab. CSP `form-action 'self'` already permits it. `Analytics.astro` fires
+  a `newsletter_signup` PostHog event on submit. To send campaigns later, pipe submissions to
+  an ESP (the app already uses Resend).
 
 ## Component Patterns
 

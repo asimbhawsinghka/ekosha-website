@@ -55,5 +55,12 @@ const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? (phKey ? '/ingest' : 'http
         });
       }
     });
+
+    // Newsletter (Netlify Forms) sign-up — capture intent before the POST navigates.
+    document.addEventListener('submit', function(event) {
+      if (event.target instanceof Element && event.target.closest('[data-newsletter-form]')) {
+        posthog.capture('newsletter_signup', { path: window.location.pathname });
+      }
+    });
   </script>
 )}

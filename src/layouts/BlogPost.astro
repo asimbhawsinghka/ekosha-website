@@ -1,0 +1,127 @@
+---
+import { Image } from 'astro:assets';
+import Layout from './Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author: string;
+  tags: string[];
+  heroImage: ImageMetadata;
+  heroImageAlt: string;
+  minutesRead: number;
+  slug: string;
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  author,
+  tags,
+  heroImage,
+  heroImageAlt,
+  minutesRead,
+  slug,
+} = Astro.props;
+
+const APP_URL = 'https://app.ekosha.co.in';
+const siteURL = Astro.site?.toString().replace(/\/$/, '') ?? 'https://ekosha.co.in';
+const postURL = `${siteURL}/blog/${slug}`;
+
+const dateFmt = (d: Date) =>
+  new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+
+// Per-article BlogPosting structured data for rich results. References the
+// site-wide Organization from Layout.astro's @graph as publisher.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  image: new URL(heroImage.src, siteURL).toString(),
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  author: { '@type': 'Organization', name: author, url: `${siteURL}/` },
+  publisher: { '@id': `${siteURL}/#organization` },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': postURL },
+  keywords: tags.join(', '),
+};
+---
+<Layout title={`${title} — eKosha`} description={description} image={heroImage.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <Nav />
+
+  <main class="bg-white">
+    <article>
+      <!-- Header -->
+      <header class="bg-brand-bg border-b border-brand-navy/8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <a href="/blog" class="inline-flex items-center gap-2 text-sm font-medium text-brand-muted hover:text-brand-navy transition-colors mb-6">
+            <span aria-hidden="true">←</span> All articles
+          </a>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {tags.map((t) => (
+              <span class="text-xs font-semibold uppercase tracking-wide text-brand-navy bg-brand-gold/20 border border-brand-gold/30 rounded-full px-3 py-1">{t}</span>
+            ))}
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight leading-tight mb-4">{title}</h1>
+          <p class="text-lg text-brand-muted leading-relaxed mb-5">{description}</p>
+          <p class="text-sm text-brand-muted">
+            By {author} · <time datetime={pubDate.toISOString()}>{dateFmt(pubDate)}</time> · {minutesRead} min read
+          </p>
+        </div>
+      </header>
+
+      <!-- Hero image -->
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2 mb-10">
+        <Image
+          src={heroImage}
+          alt={heroImageAlt}
+          widths={[480, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 896px"
+          class="w-full rounded-2xl shadow-lg mt-10"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Body -->
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+        <div class="prose prose-ekosha prose-lg max-w-none prose-img:rounded-2xl prose-img:shadow-md prose-a:font-medium">
+          <slot />
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="rounded-2xl bg-brand-navy p-8 text-center">
+          <h2 class="text-2xl font-bold text-white mb-3">Start organising what your family depends on</h2>
+          <p class="text-white/60 mb-6 max-w-lg mx-auto">
+            eKosha is free to start — add your assets, set your nominees, and share securely with the people you trust.
+          </p>
+          <a
+            href={APP_URL}
+            data-cta="blog_get_started"
+            class="inline-flex items-center justify-center bg-brand-gold text-brand-navy font-bold px-7 py-3.5 rounded-xl hover:bg-opacity-90 transition-all shadow-lg"
+          >
+            Get Started — it's free
+          </a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <NewsletterSignup />
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
