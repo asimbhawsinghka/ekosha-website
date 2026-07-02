@@ -83,4 +83,29 @@ await render('preparedness-checklist', 1200, 620, `
       <text x="96" y="62" font-family="Inter, Arial, sans-serif" font-size="20" fill="#ffffff" opacity="0.7">${d}</text>
     </g>`).join('')}`);
 
+// 4) Hero — "Complete Financial Inventory Checklist" article.
+await render('complete-financial-inventory-checklist-hero', 1200, 630, `
+  <circle cx="1060" cy="120" r="240" fill="${GOLD}" opacity="0.07"/>
+  <text x="80" y="150" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="${GOLD}" letter-spacing="2">FAMILY FINANCIAL PREPAREDNESS</text>
+  <text x="78" y="264" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800" fill="#ffffff">The Complete Financial</text>
+  <text x="78" y="336" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800" fill="#ffffff">Inventory Checklist</text>
+  <text x="80" y="418" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" fill="#ffffff" opacity="0.72">for Indian Families</text>
+  <rect x="80" y="474" width="520" height="2" fill="#ffffff" opacity="0.15"/>
+  <text x="80" y="524" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
+
+// 5) Inline — the 12-category checklist grid.
+await render('financial-inventory-categories', 1200, 760, `
+  <text x="60" y="80" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" fill="#ffffff">12 categories to check off</text>
+  ${[
+    'Bank accounts', 'Deposits (FD/RD)', 'Post office schemes', 'EPF, EPS &amp; NPS',
+    'Insurance', 'Investments &amp; demat', 'Gold', 'Property',
+    'Lockers', 'Business interests', 'Loans &amp; liabilities', 'Key documents',
+  ].map((t, i) => `
+    <g transform="translate(${60 + (i % 3) * 380}, ${140 + Math.floor(i / 3) * 150})">
+      <rect width="340" height="120" rx="14" fill="#ffffff" opacity="0.06" stroke="${GOLD}" stroke-opacity="0.3"/>
+      <circle cx="36" cy="36" r="18" fill="${GOLD}"/>
+      <text x="36" y="43" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="${NAVY}">${i + 1}</text>
+      <text x="24" y="90" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">${t}</text>
+    </g>`).join('')}`);
+
 console.log('Blog images generated.');
