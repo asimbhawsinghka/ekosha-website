@@ -136,6 +136,16 @@ Define as a local constant `const APP_URL = 'https://app.ekosha.co.in'` in each 
 - Tracks automatic `$pageview` plus `cta_click` (any anchor with a `data-cta` attribute) and
   `pricing_billing_toggle`, via a single delegated listener in `Analytics.astro`. When adding a
   new app-bound CTA, give it a `data-cta="<name>"` attribute.
+- Engagement + conversion events (also in `Analytics.astro`): `app_handoff {destination, from_cta,
+  path}` fires when a link leaves the site for the product (`app.ekosha.co.in` → `web_app`, Play
+  Store → `play_store`, App Store → `app_store`) — this is the true website→app conversion, distinct
+  from internal `/invite` navigation; `faq_opened {question, path}` on opening a FAQ `<details>`
+  (labelled via `data-faq` in `FAQ.astro`); `section_viewed {section, path}` once per page when a
+  homepage section (`features`/`how-it-works`/`security`/`pricing`/`faq`) scrolls into view;
+  `scroll_depth {percent, path}` at the 25/50/75/100% milestones. Attribution (UTM source/medium/
+  campaign, referrer, geo) is captured automatically by PostHog on `$pageview` and surfaces as
+  `$initial_*` person properties once a visitor later identifies in the app via the shared
+  `.ekosha.co.in` cookie — no extra website code needed.
 - Loaded via PostHog's inline CDN snippet (`is:inline`) and routed through the Netlify `/ingest`
   reverse proxy (see `netlify.toml`) so ad blockers can't drop events; falls back to the direct
   EU endpoint in local dev. Config via `PUBLIC_POSTHOG_KEY` / `PUBLIC_POSTHOG_HOST` env vars (see

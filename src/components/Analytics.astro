@@ -35,6 +35,27 @@ const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? (phKey ? '/ingest' : 'http
     // app: surface = product area, platform = runtime. Website is always web.
     posthog.register({ surface: 'marketing-website', platform: 'web' });
 
+    // Hosts that represent leaving the marketing site FOR the product. A click
+    // that resolves to one of these is a first-class conversion (app_handoff),
+    // distinct from internal navigation to the /invite interstitial.
+    var HANDOFF_HOSTS = {
+      'app.ekosha.co.in': 'web_app',
+      'play.google.com': 'play_store',
+      'apps.apple.com': 'app_store',
+    };
+
+    function handoffDestination(href) {
+      if (!href) return null;
+      try {
+        // Resolve relative hrefs against the current page; relative links
+        // (e.g. /invite) stay on the marketing host and are NOT handoffs.
+        var url = new URL(href, window.location.href);
+        return HANDOFF_HOSTS[url.hostname] || null;
+      } catch (e) {
+        return null;
+      }
+    }
+
     document.addEventListener('click', function(event) {
       if (!(event.target instanceof Element)) return;
 
@@ -45,7 +66,21 @@ const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? (phKey ? '/ingest' : 'http
           href: cta.getAttribute('href'),
           path: window.location.pathname,
         });
-        return;
+      }
+
+      // app_handoff fires for ANY link leaving the site for the product, whether
+      // or not it carries a data-cta. This is the true "left the site for the
+      // app" conversion used by the website -> app funnel.
+      var link = event.target.closest('a[href]');
+      if (link) {
+        var destination = handoffDestination(link.getAttribute('href'));
+        if (destination) {
+          posthog.capture('app_handoff', {
+            destination: destination,
+            from_cta: cta ? cta.getAttribute('data-cta') : null,
+            path: window.location.pathname,
+          });
+        }
       }
 
       var toggle = event.target.closest('.pricing-toggle-btn');
@@ -55,6 +90,63 @@ const phHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? (phKey ? '/ingest' : 'http
         });
       }
     });
+
+    // FAQ opens — a high-intent signal of what visitors want answered. Native
+    // <details> emit a non-bubbling 'toggle' event, so listen in the capture
+    // phase on the document. Only the open transition is recorded.
+    document.addEventListener('toggle', function(event) {
+      var details = event.target;
+      if (details instanceof Element && details.matches('details[data-faq]') && details.open) {
+        posthog.capture('faq_opened', {
+          question: details.getAttribute('data-faq'),
+          path: window.location.pathname,
+        });
+      }
+    }, true);
+
+    // Section visibility — which parts of the page visitors actually reach, i.e.
+    // what they're interested in. Each section is reported at most once per page.
+    if ('IntersectionObserver' in window) {
+      var seenSections = {};
+      var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          var id = entry.target.id;
+          if (entry.isIntersecting && id && !seenSections[id]) {
+            seenSections[id] = true;
+            posthog.capture('section_viewed', { section: id, path: window.location.pathname });
+          }
+        });
+      }, { threshold: 0.4 });
+      ['features', 'how-it-works', 'security', 'pricing', 'faq'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+      });
+    }
+
+    // Scroll depth — how far down the page visitors read. Fires each of the
+    // 25/50/75/100% milestones at most once per page load.
+    var scrollMilestones = [25, 50, 75, 100];
+    var scrollFired = {};
+    var scrollTicking = false;
+    function checkScrollDepth() {
+      scrollTicking = false;
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      var percent = Math.min(100, Math.round(((window.scrollY || doc.scrollTop) / scrollable) * 100));
+      scrollMilestones.forEach(function(m) {
+        if (percent >= m && !scrollFired[m]) {
+          scrollFired[m] = true;
+          posthog.capture('scroll_depth', { percent: m, path: window.location.pathname });
+        }
+      });
+    }
+    window.addEventListener('scroll', function() {
+      if (!scrollTicking) {
+        scrollTicking = true;
+        window.requestAnimationFrame(checkScrollDepth);
+      }
+    }, { passive: true });
 
     // Newsletter (Netlify Forms) sign-up — capture intent before the POST navigates.
     document.addEventListener('submit', function(event) {
