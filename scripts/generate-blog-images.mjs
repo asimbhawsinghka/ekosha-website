@@ -170,4 +170,14 @@ await render('how-many-bank-accounts-average-indian-family-hero', 1200, 630, `
   <rect x="80" y="464" width="520" height="2" fill="#ffffff" opacity="0.15"/>
   <text x="80" y="514" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
 
+// 12) Hero — "Seven Signs Your Financial Life Is Becoming Too Complicated" article.
+await render('seven-signs-financial-life-too-complicated-hero', 1200, 630, `
+  <circle cx="1060" cy="120" r="240" fill="${GOLD}" opacity="0.07"/>
+  <text x="80" y="150" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="${GOLD}" letter-spacing="2">FAMILY FINANCIAL PREPAREDNESS</text>
+  <text x="78" y="270" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="800" fill="${GOLD}">7</text>
+  <text x="180" y="270" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">Signs Your Financial</text>
+  <text x="78" y="348" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">Life Is Too Complicated</text>
+  <rect x="80" y="474" width="520" height="2" fill="#ffffff" opacity="0.15"/>
+  <text x="80" y="524" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
+
 console.log('Blog images generated.');
