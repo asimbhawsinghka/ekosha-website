@@ -119,4 +119,15 @@ await render('25-financial-assets-families-forget-hero', 1200, 630, `
   <rect x="80" y="486" width="520" height="2" fill="#ffffff" opacity="0.15"/>
   <text x="80" y="536" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
 
+// 7) Hero — "Nominee vs Legal Heir Explained Simply" article.
+await render('nominee-vs-legal-heir-explained-simply-hero', 1200, 630, `
+  <circle cx="1060" cy="120" r="240" fill="${GOLD}" opacity="0.07"/>
+  <text x="80" y="150" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="${GOLD}" letter-spacing="2">FAMILY FINANCIAL PREPAREDNESS</text>
+  <text x="78" y="270" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff">Nominee</text>
+  <text x="330" y="270" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="600" fill="${GOLD}">vs</text>
+  <text x="78" y="342" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff">Legal Heir</text>
+  <text x="80" y="424" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500" fill="#ffffff" opacity="0.72">Explained simply — with what the Supreme Court says</text>
+  <rect x="80" y="480" width="520" height="2" fill="#ffffff" opacity="0.15"/>
+  <text x="80" y="530" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
+
 console.log('Blog images generated.');
