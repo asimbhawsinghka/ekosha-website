@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Delete Your Account — eKosha"
+  description="How to delete your eKosha account and exactly what data is removed or retained, in line with the DPDP Act 2023."
+>
+  <Nav />
+  <main class="max-w-3xl mx-auto px-6 py-24">
+    <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-2">Delete Your Account</h1>
+    <p class="text-brand-muted mb-10 text-sm">Last updated: July 4, 2026</p>
+
+    <section class="mb-10">
+      <p class="text-brand-text leading-relaxed">
+        You can delete your eKosha account and its data at any time, directly from the app.
+        This page explains how to do it, what happens during the 30-day grace period, and
+        exactly which data is deleted and which is retained (and why).
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">1. How to delete your account (in the app)</h2>
+      <ol class="list-decimal list-inside space-y-2 text-brand-text text-sm leading-relaxed">
+        <li>Open the eKosha app and sign in.</li>
+        <li>Go to <strong>Settings</strong> and tap <strong>Delete Account</strong> (under the Account section).</li>
+        <li>Read the warning, then confirm your identity by re-entering your password (or re-verifying with Google, depending on how you sign in).</li>
+        <li>Type <strong>DELETE</strong> to confirm, then tap <strong>Schedule Account Deletion</strong>.</li>
+      </ol>
+      <p class="text-brand-text text-sm mt-3 leading-relaxed">
+        The app is available on Android and on the web at
+        <a href="https://app.ekosha.co.in" class="text-brand-gold underline">app.ekosha.co.in</a>.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">2. What happens next</h2>
+      <ul class="space-y-2 text-sm text-brand-text">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Your account is scheduled for permanent deletion after a <strong>30-day grace period</strong>.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>You are signed out immediately. <strong>To cancel</strong>, simply log back in within 30 days — you'll be taken straight to a screen where you can cancel the deletion.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Once the 30 days pass, deletion runs automatically and <strong>cannot be undone</strong>.</span></li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">3. What is deleted and what is retained</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-brand-text border-collapse">
+          <thead>
+            <tr class="bg-brand-bg">
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">Data</th>
+              <th class="text-left px-4 py-2 font-semibold text-brand-navy border border-brand-navy/10">What happens on deletion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Your profile &amp; identity (name, email, phone, date of birth)</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Permanently deleted</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Your assets, co-owners and nominees</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Permanently deleted</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Shares you created and shares made to you</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Permanently deleted, and you are removed from other people's vaults</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Your saved contacts, notifications and in-app activity</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Permanently deleted</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Your subscription and sign-in credentials</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Permanently deleted</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Consent records</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Retained for <strong>7 years</strong> as required by the DPDP Act 2023 (legal hold)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Promo-code usage &amp; email-unsubscribe preference</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Retained in <strong>anonymised</strong> form (no personal data) to prevent abuse and honour a prior unsubscribe</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-brand-text text-sm mt-3 leading-relaxed">
+        Retained items either carry no personal data or are kept only where the law requires it.
+        See our <a href="/privacy" class="text-brand-gold underline">Privacy Policy</a> for full detail.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">4. Can't access the app?</h2>
+      <p class="text-brand-text leading-relaxed">
+        If you can no longer sign in, you can still request deletion of your account and personal
+        data by email. Contact our Grievance Officer at
+        <a href="mailto:grievance@ekosha.co.in" class="text-brand-gold underline">grievance@ekosha.co.in</a>
+        or write to
+        <a href="mailto:privacy@ekosha.co.in" class="text-brand-gold underline">privacy@ekosha.co.in</a>.
+        We respond within <strong>30 days</strong> of receiving your request.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
