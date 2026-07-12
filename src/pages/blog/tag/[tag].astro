@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
+import BlogPostCard from '../../../components/BlogPostCard.astro';
+import { tagSlug } from '../../../lib/tagSlug';
+
+// One static page per unique tag used across non-draft posts, so readers can
+// browse the blog by topic instead of only by date.
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+  const tagsBySlug = new Map<string, string>();
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      tagsBySlug.set(tagSlug(tag), tag);
+    }
+  }
+
+  return Array.from(tagsBySlug.entries()).map(([slug, tag]) => ({
+    params: { tag: slug },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tags.includes(tag))).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = `“${tag}” Articles — The eKosha Blog`;
+const description = `Articles tagged “${tag}” on the eKosha blog — practical, calm guidance on organising your family's finances.`;
+---
+<Layout title={title} description={description}>
+  <Nav />
+
+  <main class="bg-white">
+    <!-- Header -->
+    <section class="bg-brand-navy">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors mb-6">
+          <span aria-hidden="true">←</span> All articles
+        </a>
+        <div class="inline-flex items-center gap-2 bg-white/8 text-white text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6 border border-brand-gold/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-gold inline-block"></span>
+          Family Financial Preparedness
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Articles tagged &ldquo;{tag}&rdquo;
+        </h1>
+        <p class="text-white/65 text-lg max-w-2xl mx-auto">
+          {posts.length} {posts.length === 1 ? 'article' : 'articles'} on this topic.
+        </p>
+      </div>
+    </section>
+
+    <!-- Posts -->
+    <section class="py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 sm:grid-cols-2">
+          {posts.map((post) => (
+            <BlogPostCard post={post} />
+          ))}
+        </div>
+
+        <div class="mt-14">
+          <NewsletterSignup />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

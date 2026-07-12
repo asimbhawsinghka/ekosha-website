@@ -18,6 +18,22 @@ const { Content } = await post.render();
 // Rough reading time from the raw Markdown body (~200 wpm).
 const words = post.body.split(/\s+/).filter(Boolean).length;
 const minutesRead = Math.max(1, Math.round(words / 200));
+
+// Related posts: rank other non-draft posts by number of shared tags (desc),
+// tie-broken by most recent, then fill up to 3 with the most recent
+// remaining posts if fewer than 3 share a tag.
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const others = allPosts.filter((p) => p.slug !== post.slug);
+const sharedTagCount = (p: (typeof others)[number]) =>
+  p.data.tags.filter((t) => post.data.tags.includes(t)).length;
+
+const relatedPosts = [...others]
+  .sort((a, b) => {
+    const byTags = sharedTagCount(b) - sharedTagCount(a);
+    if (byTags !== 0) return byTags;
+    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+  })
+  .slice(0, 3);
 ---
 <BlogPost
   title={post.data.title}
@@ -30,6 +46,7 @@ const minutesRead = Math.max(1, Math.round(words / 200));
   heroImageAlt={post.data.heroImageAlt}
   minutesRead={minutesRead}
   slug={post.slug}
+  relatedPosts={relatedPosts}
 >
   <Content />
 </BlogPost>
