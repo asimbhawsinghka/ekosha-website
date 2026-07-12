@@ -11,9 +11,14 @@ draft: false
 
 Ask most people where their family's financial information "lives," and
 you'll get one of three answers: a folder in Google Drive or OneDrive, a
-physical file in a cupboard at home, or a shrug and "my family knows." All
-three are genuine, common choices — and all three have real strengths.
-None of them is free of real gaps either. Here's an honest look at each.
+physical file in a cupboard at home, or a shrug and "my family knows." The
+question tends to get framed around death, but that's only one of the
+moments it actually matters. It's just as real when a parent is
+hospitalised while their adult child is a flight away, or when whoever
+usually handles the family's finances simply isn't reachable and someone
+else has to act anyway. All three answers are genuine, common choices —
+and each has real strengths and real gaps, across every one of these
+moments.
 
 ## Cloud storage — Google Drive or OneDrive
 
@@ -36,6 +41,14 @@ request can [take two to four weeks to review](https://support.microsoft.com/en-
 and Microsoft has been explicit that it generally won't hand over account
 contents without a subpoena or court order.
 
+There's also an everyday version of this problem, not just the after-death
+one. Say a father is hospitalised while his son is in another city — it's
+often the mother who's physically present at the admission desk, and she
+needs the login, the comfort navigating a folder tree, and the right file
+name, all under pressure, in the time it takes to matter. Sharing the
+entire account with her ahead of time, rather than just the one document
+she'd actually need, is its own risk.
+
 There's also an inactivity clock running whether anyone remembers it or
 not. Google [announced in 2023](https://blog.google/innovation-and-ai/technology/safety-security/updating-our-inactive-account-policies/)
 that a personal account not signed into for **two years** may be deleted
@@ -51,7 +64,12 @@ were involved in 38% of breaches** — a single phished or reused password
 is often all it takes to expose everything in an account. A Drive folder
 also isn't built for the job in a structural sense: it holds files, not a
 map of which asset belongs to whom, which nominee is attached to which
-policy, or what's still missing.
+policy, or what's still missing. It also doesn't distinguish an asset from
+a debt — a loan statement sits in the same undifferentiated pile as a
+fixed deposit receipt, so nothing prompts anyone to notice a running EMI
+or a personal loan that still needs paying, which matters just as much as
+the assets when the person who was earning is the one who's now
+unavailable.
 
 ## A physical file at home
 
@@ -73,6 +91,16 @@ has no backup if the location itself is compromised — there's no "other
 copy" unless someone deliberately made one and stored it somewhere else
 just as securely.
 
+A physical file is also, by definition, in one place — often not the
+place it's needed. If it's kept at the adult child's home in another
+city, it does nothing for the parent standing at a hospital admission
+desk right now. Even if it's at the parents' home, an elderly parent under
+stress may not remember exactly where "the folder" is, or which of
+several files has the health insurance details, let alone the TPA
+helpline number a hospital is asking for on the spot — a scenario we go
+through step by step in [what to do when a family member is
+hospitalised](/blog/hospitalisation-financial-checklist).
+
 The bigger everyday risk is quieter: staleness and single points of
 knowledge. A physical file only helps if someone remembers to update it
 every time a new account, policy or asset is added — and if more than one
@@ -80,7 +108,11 @@ person in the family actually knows it exists and where it is. As we've
 written about separately, most families [carry far more bank accounts than
 they'd guess](/blog/how-many-bank-accounts-average-indian-family), which
 makes "I'll just remember to update the folder" a weaker plan than it
-sounds.
+sounds. Liabilities fare even worse in a paper file than assets do: an
+asset is usually something physical — a locker key, a policy paper — that
+prompts a question about itself. A loan is just a monthly debit from a
+bank account, with nothing tangible reminding anyone to write it down, so
+it's dropped from the file more often than what's owned ever is.
 
 Even the regulated version of physical storage — a bank locker — isn't
 instant. Nomination has to be filled in correctly in the first place, and
@@ -98,10 +130,23 @@ recorded with what it is, who owns it, who the nominee is, and where the
 supporting paperwork lives, all in one place, entered once. That matters
 in the moment it's needed: a family member isn't decoding an insurance
 policy's fine print for the first time under pressure, because the key
-details were already captured when things were calm. Sharing works the
-same way in reverse — instead of a request-and-review process after
-someone has died, access is set up in advance with the specific people
-you've already decided should have it.
+details were already captured when things were calm. eKosha's structured
+tracking already covers assets, co-owners, nominees and secure sharing,
+and is extending to liabilities next — so a family gets the same clarity
+on what's owed as on what's owned, which matters most precisely when the
+person who was earning is the one who's now unavailable.
+
+Sharing works the same way in reverse — instead of a request-and-review
+process after someone has died, access is set up in advance with the
+specific people you've already decided should have it. That's exactly
+where the hospital scenario above plays out differently: a parent living
+in a different city, who's already paying for their ageing parents'
+health insurance, can give a specific trusted local person — their mother,
+say, not "the family" in the abstract — access to exactly the records
+she'd need. If their father is hospitalised, she isn't waiting on a phone
+call relaying a policy number from memory while her son is still in
+transit; she can look it up herself, because the access was set up when
+things were calm.
 
 It's also not only an emergency tool. Because the information stays
 current, it's just as useful to open at ordinary moments — getting
@@ -120,13 +165,6 @@ portability matter for exactly this reason). And like any tool, it only
 helps if the family actually opens it and keeps it updated — the same
 discipline a folder or a physical file also demands.
 
-One honest scope note: eKosha today covers assets, co-owners, nominees and
-secure sharing — that's what's live. Tracking liabilities (loans, dues,
-and the debts a family needs to know about, which are arguably even more
-commonly forgotten than assets) is on the roadmap, not available yet.
-Anywhere this article touches on that, it's describing a direction, not a
-current feature.
-
 ## So which should you actually use?
 
 Realistically, this isn't an either/or choice. Documents that are legally
@@ -137,16 +175,19 @@ as long as it isn't treated as the single source of truth for the whole
 picture, given how much friction it adds exactly when a family needs fast,
 certain access. What neither a Drive folder nor a paper file solves well
 is the coordination problem: keeping a living, structured, already-shared
-record of what exists, where it lives, and who's been told — usable at an
-emergency, and just as usable on an ordinary Tuesday when someone's simply
-trying to understand what they own.
+record of what exists, what's owed, where it lives, and who's been told —
+usable when someone dies, when someone's incapacitated, or simply when
+the person who usually handles things is a phone call away instead of in
+the room.
 
 ## Where eKosha fits
 
 eKosha isn't a replacement for your bank locker, your registered will, or
 DigiLocker — it's the layer that ties them together: for every asset, who
 owns it, who the nominee is, and where the paperwork lives, kept current
-and shared in advance with the people you trust. It's built to be opened
-at milestones, not just emergencies, and liabilities tracking is next on
-the roadmap — because what a family owes deserves the same clarity as what
-it owns.
+and shared in advance with the people you trust — whether that's a spouse
+handling things after a loss, or a parent halfway across the country
+trying to help during a hospital admission. It's built to be opened at
+milestones, not just emergencies, and it's extending that same clarity to
+liabilities next — because what a family owes deserves to be just as easy
+to find as what it owns.
