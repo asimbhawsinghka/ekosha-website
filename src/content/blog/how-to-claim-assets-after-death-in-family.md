@@ -20,7 +20,7 @@ actually get this transferred? This guide walks through each major asset
 type — who to approach, what to bring, and roughly how long it takes.
 If you're unsure which certificate a particular institution will ask for,
 our [companion piece on legal heir certificates, succession certificates
-and probate](/blog/legal-heir-succession-certificate-probate-explained)
+and probate](/blog/legal-heir-succession-certificate-probate-explained/)
 covers that separately.
 
 One thing worth doing first, regardless of which assets are involved:
@@ -193,7 +193,7 @@ In practice:
 Nearly every process above needs the same starting point: proof of death,
 proof of who's claiming, and — depending on the nominee situation and the
 asset's value — one of the certificates we cover in our [companion
-article](/blog/legal-heir-succession-certificate-probate-explained). The
+article](/blog/legal-heir-succession-certificate-probate-explained/). The
 single biggest factor in how fast any of this moves isn't the institution's
 paperwork; it's whether the family already knows what the deceased owned,
 or is discovering it asset by asset while grieving.
@@ -201,7 +201,7 @@ or is discovering it asset by asset while grieving.
 ## Where eKosha fits
 
 This is precisely the situation a [financial
-inventory](/blog/complete-financial-inventory-checklist) is built for.
+inventory](/blog/complete-financial-inventory-checklist/) is built for.
 When every account, policy, and share is already listed — with the
 institution, the approximate value, and the nominee — a family walks into
 each of these processes knowing exactly what to ask for, instead of

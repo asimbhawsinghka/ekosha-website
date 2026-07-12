@@ -13,7 +13,7 @@ Nobody reminds you to check whether your nominee is still the right person,
 or whether that old insurance policy is even active. Nothing about a bank
 account or a mutual fund folio prompts you to look at it once it's opened —
 which is exactly how so much of it ends up forgotten, as we've written about
-[before](/blog/25-financial-assets-families-forget).
+[before](/blog/25-financial-assets-families-forget/).
 
 So how often *should* you actually look? There's a useful floor to start
 from, and then a better answer than the floor.
@@ -59,7 +59,7 @@ in the calendar:
 
 - **Marriage** — nominees, insurance, and joint holdings all need a fresh
   look (see our [newly married couples
-  checklist](/blog/financial-checklist-newly-married-couples)).
+  checklist](/blog/financial-checklist-newly-married-couples/)).
 - **A child's birth** — new nominees to consider, and often new insurance
   needs.
 - **A job change** — an EPF account left behind, group insurance that ends,

@@ -69,7 +69,7 @@ months is classified as inoperative; if that inactivity stretches to ten
 years, the balance is
 eventually transferred to the RBI's Depositor Education and Awareness
 Fund — the same [₹78,213 crore pool of unclaimed
-deposits](/blog/complete-financial-inventory-checklist) we've written about
+deposits](/blog/complete-financial-inventory-checklist/) we've written about
 before.
 
 None of this happens because families are careless. It happens because
@@ -83,7 +83,7 @@ Right now, try actually listing every bank account in your family — not
 from memory alone, but by checking old passbooks, SMS alerts, and
 half-remembered apps. Most people find at least one they'd forgotten. That
 list, once it exists, is the entire first step of a [financial
-inventory](/blog/complete-financial-inventory-checklist) — the difference
+inventory](/blog/complete-financial-inventory-checklist/) — the difference
 between "we probably have a few accounts somewhere" and actually knowing
 what your family holds.
 

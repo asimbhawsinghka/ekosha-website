@@ -77,7 +77,7 @@ twenty years as it does today. It also can't be phished. And for several
 document types, a physical original is legally required anyway, no matter
 how good the digital backup is — a point we've covered in detail in [which
 financial documents to keep and for how
-long](/blog/financial-documents-store-safely).
+long](/blog/financial-documents-store-safely/).
 
 **Where it falls short.**
 
@@ -97,14 +97,14 @@ Even if it's at your parents' home, she may not remember exactly where
 insurance details, let alone the TPA helpline number a hospital is asking
 for on the spot — a scenario we go through step by step in [what to do
 when a family member is
-hospitalised](/blog/hospitalisation-financial-checklist).
+hospitalised](/blog/hospitalisation-financial-checklist/).
 
 The bigger everyday risk is quieter: staleness and single points of
 knowledge. A physical file only helps if someone remembers to update it
 every time a new account, policy or asset is added — and if more than one
 person in the family actually knows it exists and where it is. As we've
 written about separately, most families [carry far more bank accounts than
-they'd guess](/blog/how-many-bank-accounts-average-indian-family), which
+they'd guess](/blog/how-many-bank-accounts-average-indian-family/), which
 makes "I'll just remember to update the folder" a weaker plan than it
 sounds. Liabilities fare even worse in a paper file than assets do: an
 asset is usually something physical — a locker key, a policy paper — that

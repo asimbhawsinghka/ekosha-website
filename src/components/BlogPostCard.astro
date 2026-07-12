@@ -13,7 +13,7 @@ const dateFmt = (d: Date) =>
   new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
 ---
 <div class="group rounded-2xl overflow-hidden border border-brand-navy/10 shadow-sm hover:shadow-md hover:border-brand-gold/40 transition-all duration-200 bg-white">
-  <a href={`/blog/${post.slug}`} class="block">
+  <a href={`/blog/${post.slug}/`} class="block">
     <Image
       src={post.data.heroImage}
       alt={post.data.heroImageAlt}
@@ -26,12 +26,12 @@ const dateFmt = (d: Date) =>
     <div class="flex flex-wrap gap-2 mb-3">
       {post.data.tags.slice(0, 2).map((t) => (
         <a
-          href={`/blog/tag/${tagSlug(t)}`}
+          href={`/blog/tag/${tagSlug(t)}/`}
           class="text-xs font-semibold uppercase tracking-wide text-brand-navy bg-brand-gold/20 border border-brand-gold/30 rounded-full px-2.5 py-0.5 hover:bg-brand-gold/30 transition-colors"
         >{t}</a>
       ))}
     </div>
-    <a href={`/blog/${post.slug}`} class="block">
+    <a href={`/blog/${post.slug}/`} class="block">
       <h2 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">{post.data.title}</h2>
       <p class="text-brand-muted text-sm leading-relaxed mb-4">{post.data.description}</p>
     </a>
