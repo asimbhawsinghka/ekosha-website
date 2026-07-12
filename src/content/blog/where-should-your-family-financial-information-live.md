@@ -13,12 +13,10 @@ Ask most people where their family's financial information "lives," and
 you'll get one of three answers: a folder in Google Drive or OneDrive, a
 physical file in a cupboard at home, or a shrug and "my family knows." The
 question tends to get framed around death, but that's only one of the
-moments it actually matters. It's just as real when a parent is
-hospitalised while their adult child is a flight away, or when whoever
-usually handles the family's finances simply isn't reachable and someone
-else has to act anyway. All three answers are genuine, common choices —
-and each has real strengths and real gaps, across every one of these
-moments.
+moments it actually matters — it's just as real if you live in a different
+city from your ageing parents and something happens while you're not
+there. All three answers are genuine, common choices — and each has real
+strengths and real gaps, across every one of these moments.
 
 ## Cloud storage — Google Drive or OneDrive
 
@@ -42,12 +40,13 @@ and Microsoft has been explicit that it generally won't hand over account
 contents without a subpoena or court order.
 
 There's also an everyday version of this problem, not just the after-death
-one. Say a father is hospitalised while his son is in another city — it's
-often the mother who's physically present at the admission desk, and she
-needs the login, the comfort navigating a folder tree, and the right file
-name, all under pressure, in the time it takes to matter. Sharing the
-entire account with her ahead of time, rather than just the one document
-she'd actually need, is its own risk.
+one. Say you live in a different city from your parents, and your father
+is hospitalised: it's your mother who's physically present at the
+admission desk, not you, and she's the one who needs the login, the
+folder-tree familiarity, and the right file name — all under pressure,
+before you can even get there. Sharing the entire account with her ahead
+of time, rather than just the one document she'd actually need, is its own
+risk.
 
 There's also an inactivity clock running whether anyone remembers it or
 not. Google [announced in 2023](https://blog.google/innovation-and-ai/technology/safety-security/updating-our-inactive-account-policies/)
@@ -67,9 +66,8 @@ map of which asset belongs to whom, which nominee is attached to which
 policy, or what's still missing. It also doesn't distinguish an asset from
 a debt — a loan statement sits in the same undifferentiated pile as a
 fixed deposit receipt, so nothing prompts anyone to notice a running EMI
-or a personal loan that still needs paying, which matters just as much as
-the assets when the person who was earning is the one who's now
-unavailable.
+or a loan that still needs paying, which is exactly the information a
+family needs most when its main earner is the one who's now unavailable.
 
 ## A physical file at home
 
@@ -92,13 +90,13 @@ copy" unless someone deliberately made one and stored it somewhere else
 just as securely.
 
 A physical file is also, by definition, in one place — often not the
-place it's needed. If it's kept at the adult child's home in another
-city, it does nothing for the parent standing at a hospital admission
-desk right now. Even if it's at the parents' home, an elderly parent under
-stress may not remember exactly where "the folder" is, or which of
-several files has the health insurance details, let alone the TPA
-helpline number a hospital is asking for on the spot — a scenario we go
-through step by step in [what to do when a family member is
+place it's needed. If it's kept at your home in another city, it does
+nothing for your mother standing at a hospital admission desk right now.
+Even if it's at your parents' home, she may not remember exactly where
+"the folder" is under stress, or which of several files has the health
+insurance details, let alone the TPA helpline number a hospital is asking
+for on the spot — a scenario we go through step by step in [what to do
+when a family member is
 hospitalised](/blog/hospitalisation-financial-checklist).
 
 The bigger everyday risk is quieter: staleness and single points of
@@ -110,9 +108,9 @@ they'd guess](/blog/how-many-bank-accounts-average-indian-family), which
 makes "I'll just remember to update the folder" a weaker plan than it
 sounds. Liabilities fare even worse in a paper file than assets do: an
 asset is usually something physical — a locker key, a policy paper — that
-prompts a question about itself. A loan is just a monthly debit from a
-bank account, with nothing tangible reminding anyone to write it down, so
-it's dropped from the file more often than what's owned ever is.
+someone eventually asks about. A loan is just a monthly debit from a bank
+account, with nothing tangible reminding anyone to write it down, so it's
+dropped from the file more often than what's owned ever is.
 
 Even the regulated version of physical storage — a bank locker — isn't
 instant. Nomination has to be filled in correctly in the first place, and
@@ -132,21 +130,20 @@ in the moment it's needed: a family member isn't decoding an insurance
 policy's fine print for the first time under pressure, because the key
 details were already captured when things were calm. eKosha's structured
 tracking already covers assets, co-owners, nominees and secure sharing,
-and is extending to liabilities next — so a family gets the same clarity
-on what's owed as on what's owned, which matters most precisely when the
-person who was earning is the one who's now unavailable.
+and is extending to liabilities next — so a family has the same clarity on
+what's owed as on what's owned, the exact gap that matters most when a
+family's main earner isn't there to explain it.
 
 Sharing works the same way in reverse — instead of a request-and-review
 process after someone has died, access is set up in advance with the
-specific people you've already decided should have it. That's exactly
-where the hospital scenario above plays out differently: a parent living
-in a different city, who's already paying for their ageing parents'
-health insurance, can give a specific trusted local person — their mother,
-say, not "the family" in the abstract — access to exactly the records
-she'd need. If their father is hospitalised, she isn't waiting on a phone
-call relaying a policy number from memory while her son is still in
-transit; she can look it up herself, because the access was set up when
-things were calm.
+specific people you've already decided should have it. If you live in a
+different city from your parents and you're the one paying for their
+health insurance, you can give your mother — specifically her, not "the
+family" in the abstract — access to exactly the records she'd need. If
+your father is hospitalised while you're still travelling, she isn't
+stuck waiting on a call from you relaying a policy number from memory; she
+can look it up herself, because you set up her access when things were
+calm.
 
 It's also not only an emergency tool. Because the information stays
 current, it's just as useful to open at ordinary moments — getting
@@ -186,7 +183,7 @@ eKosha isn't a replacement for your bank locker, your registered will, or
 DigiLocker — it's the layer that ties them together: for every asset, who
 owns it, who the nominee is, and where the paperwork lives, kept current
 and shared in advance with the people you trust — whether that's a spouse
-handling things after a loss, or a parent halfway across the country
+handling things after a loss, or an adult child halfway across the country
 trying to help during a hospital admission. It's built to be opened at
 milestones, not just emergencies, and it's extending that same clarity to
 liabilities next — because what a family owes deserves to be just as easy
