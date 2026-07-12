@@ -125,7 +125,7 @@ None of these certificates are faster to obtain if nobody knows what the
 deceased actually owned. The petition for a succession certificate or
 Letters of Administration requires a description of the assets involved —
 exactly the kind of list our [financial inventory
-checklist](/blog/complete-financial-inventory-checklist) describes.
+checklist](/blog/complete-financial-inventory-checklist/) describes.
 Families who've kept that list in eKosha walk into this process knowing
 what to ask for; families who haven't are often discovering the full
 picture and navigating the legal process at the same time.

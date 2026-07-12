@@ -93,7 +93,7 @@ alongside your own encrypted copies, for the documents that support it.
 
 None of this helps if only one person in the family knows where everything
 is. The same principle from our [financial inventory
-checklist](/blog/complete-financial-inventory-checklist) applies here:
+checklist](/blog/complete-financial-inventory-checklist/) applies here:
 what exists, where it's kept, and who should know — for documents just as
 much as for the assets themselves.
 

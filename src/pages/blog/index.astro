@@ -47,7 +47,7 @@ const description =
             <span class="text-sm font-semibold text-brand-muted mr-1">Browse by topic:</span>
             {topics.map((t) => (
               <a
-                href={`/blog/tag/${tagSlug(t)}`}
+                href={`/blog/tag/${tagSlug(t)}/`}
                 class="text-xs font-semibold uppercase tracking-wide text-brand-navy bg-brand-gold/20 border border-brand-gold/30 rounded-full px-2.5 py-0.5 hover:bg-brand-gold/30 transition-colors"
               >{t}</a>
             ))}

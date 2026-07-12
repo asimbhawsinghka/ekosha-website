@@ -20,7 +20,7 @@ yours, and a small next step for each.
 If someone asked you right now to list every bank account your family
 holds, could you? Most people can't, and it's rarely because of
 carelessness — it's [genuinely easy to accumulate six or more accounts
-across an ordinary family](/blog/how-many-bank-accounts-average-indian-family)
+across an ordinary family](/blog/how-many-bank-accounts-average-indian-family/)
 without ever noticing it happening. If you had to pause and think, that's
 sign number one.
 
@@ -33,7 +33,7 @@ An insurance policy or a mutual fund SIP that hasn't crossed your mind
 since you bought it isn't necessarily a problem — but if you genuinely
 can't remember its current status, that's worth fixing. There's no
 regulation forcing you to check; [the review has to be something you
-choose to do](/blog/how-often-review-financial-information), on your own
+choose to do](/blog/how-often-review-financial-information/), on your own
 schedule.
 
 *Next step: pick one date a year — a birthday, the financial year-end — and
@@ -44,7 +44,7 @@ commit to it.*
 This one matters more than it seems. A nominee named years ago — before a
 marriage, a falling-out, or simply the passage of time — may no longer be
 who you'd choose today. And [a nominee isn't automatically the same as
-who legally inherits](/blog/nominee-vs-legal-heir-explained-simply), which
+who legally inherits](/blog/nominee-vs-legal-heir-explained-simply/), which
 makes getting this one deliberately right even more worthwhile.
 
 *Next step: check the nominee on your three or four biggest assets first —
@@ -55,7 +55,7 @@ bank accounts, insurance, retirement funds.*
 A property deed in a locker, an insurance policy in an email, a PPF
 certificate in a drawer at your parents' house — each decision made sense
 individually. Together, they mean [no single person could reconstruct the
-full picture](/blog/financial-documents-store-safely) quickly if they
+full picture](/blog/financial-documents-store-safely/) quickly if they
 needed to.
 
 *Next step: write down where each major document actually is — not the
@@ -67,7 +67,7 @@ If your family would be starting from scratch — piecing together accounts,
 policies and passwords from memory and old paperwork — should something
 happen to you, that's the clearest sign of all. It's also the most common
 one, and the reason we wrote about it [when we started this
-blog](/blog/if-something-happened-tomorrow).
+blog](/blog/if-something-happened-tomorrow/).
 
 *Next step: write the list down somewhere more than one person can reach
 it — that's the whole fix.*
@@ -77,7 +77,7 @@ it — that's the whole fix.*
 A marriage, a new job, a move to a new city, a child — each one changes
 what you own, what you owe, or who should be named where, and each one is
 easy to handle in the moment and forget to reflect in your records
-afterward. [Newly married couples](/blog/financial-checklist-newly-married-couples)
+afterward. [Newly married couples](/blog/financial-checklist-newly-married-couples/)
 are a common example, but the pattern repeats at every major life change.
 
 *Next step: if something big happened in the last year, that's your
@@ -89,7 +89,7 @@ A new app for a new investment, a new bank for a new job, a new policy for
 a new need — each addition is reasonable, but few people ever go back and
 consolidate or close what's no longer needed. Over years, this is exactly
 how [families end up forgetting they hold an asset at
-all](/blog/25-financial-assets-families-forget).
+all](/blog/25-financial-assets-families-forget/).
 
 *Next step: when you do your account count (sign #1), flag anything you
 haven't touched in over a year, and decide deliberately whether to keep or
@@ -106,7 +106,7 @@ recently, there was nowhere convenient to do that looking.
 
 That's the gap eKosha is built to close: one private, encrypted place to
 record everything your family owns, its nominee, and where it lives —
-[built around the same checklist](/blog/complete-financial-inventory-checklist)
+[built around the same checklist](/blog/complete-financial-inventory-checklist/)
 we've walked through in this series. If more than one of these seven signs
 sounded familiar, that's not a verdict on how you've managed things. It's
 just a good week to start the list.

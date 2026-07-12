@@ -60,7 +60,7 @@ Act](https://www.indiafirstlife.com/nominee-central/blogs/section-39-insurance-a
 naming your spouse as nominee makes them a "beneficial nominee" — they
 inherit the payout outright, rather than holding it in trust for other
 heirs. (Our [nominee vs legal heir
-explainer](/blog/nominee-vs-legal-heir-explained-simply) covers this
+explainer](/blog/nominee-vs-legal-heir-explained-simply/) covers this
 distinction in full, and it applies the same way in reverse for your
 spouse's policies.)
 
@@ -111,7 +111,7 @@ future reference.
 
 This is the natural moment to combine (or start) the kind of financial
 inventory we've [written about
-before](/blog/complete-financial-inventory-checklist): every account, every
+before](/blog/complete-financial-inventory-checklist/): every account, every
 policy, every nominee, in one place both of you can see. Two people
 starting a shared financial life should be able to see the whole picture
 together, not reconstruct it separately years later.

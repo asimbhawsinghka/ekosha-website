@@ -13,7 +13,7 @@ Nobody forgets a home loan. Loans send reminders, EMIs get deducted, banks
 call if you're late. It's the *assets* — the money that's actually yours —
 that tend to slip away quietly, because nothing chases you to remember them.
 
-Our [earlier checklist](/blog/complete-financial-inventory-checklist) covered
+Our [earlier checklist](/blog/complete-financial-inventory-checklist/) covered
 the broad categories every family should track. This one goes narrower: 25
 specific assets that are easy to open, easy to forget, and surprisingly
 common to lose track of entirely. If even a few of these ring a bell, that's
