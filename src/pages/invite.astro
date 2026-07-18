@@ -19,6 +19,17 @@ const APP_STORE_URL = 'https://apps.apple.com/app/id0000000000';
   title="Get the eKosha App — eKosha"
   description="Download eKosha, the private encrypted vault for Indian families to store, organise and share financial assets."
 >
+  <!--
+    Android has no live Play Store listing yet (see PLAY_STORE_LIVE above), so
+    there's nothing useful to show an Android visitor here — send them
+    straight to the web app instead of a disabled "coming soon" badge.
+    This runs before Nav/main render to avoid a flash of the default block.
+  -->
+  <script is:inline define:vars={{ appUrl: APP_URL }}>
+    if (/Android/.test(navigator.userAgent)) {
+      window.location.replace(appUrl);
+    }
+  </script>
   <Nav />
   <main class="bg-brand-bg min-h-screen">
     <div class="max-w-2xl mx-auto px-6 py-24 text-center">
