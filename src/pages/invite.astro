@@ -5,9 +5,8 @@ import Footer from '../components/Footer.astro';
 
 const APP_URL = 'https://app.ekosha.co.in';
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.ekosha.app';
-// TODO: flip to true once the Play Store listing for com.ekosha.app is public,
-// and swap the disabled badge below for the <a href={PLAY_STORE_URL}> branch.
-const PLAY_STORE_LIVE = false;
+// The Play Store listing for com.ekosha.app is live.
+const PLAY_STORE_LIVE = true;
 // TODO: flip to true once an iOS app + App Store listing exist, and set the
 // real App Store URL alongside this flag — until then iOS visitors are shown
 // "Add to Home Screen" (PWA) instructions instead.
@@ -20,14 +19,14 @@ const APP_STORE_URL = 'https://apps.apple.com/app/id0000000000';
   description="Download eKosha, the private encrypted vault for Indian families to store, organise and share financial assets."
 >
   <!--
-    Android has no live Play Store listing yet (see PLAY_STORE_LIVE above), so
-    there's nothing useful to show an Android visitor here — send them
-    straight to the web app instead of a disabled "coming soon" badge.
+    Android visitors skip straight to the live Play Store listing — no need
+    to show them the badge first. Falls back to the web app if
+    PLAY_STORE_LIVE is ever flipped back to false.
     This runs before Nav/main render to avoid a flash of the default block.
   -->
-  <script is:inline define:vars={{ appUrl: APP_URL }}>
+  <script is:inline define:vars={{ redirectUrl: PLAY_STORE_LIVE ? PLAY_STORE_URL : APP_URL }}>
     if (/Android/.test(navigator.userAgent)) {
-      window.location.replace(appUrl);
+      window.location.replace(redirectUrl);
     }
   </script>
   <Nav />
