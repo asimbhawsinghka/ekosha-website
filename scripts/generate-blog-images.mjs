@@ -243,3 +243,13 @@ await render('renewal-reminder-timeline', 1200, 460, `
     <circle cx="${x}" cy="230" r="${i === 3 ? 22 : 16}" fill="${GOLD}"/>
     <text x="${x}" y="${i === 3 ? 300 : 292}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#ffffff">${t}</text>
     <text x="${x}" y="338" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#ffffff" opacity="0.72">${d}</text>`).join('')}`);
+
+// 19) Hero — "Nominee on Every Asset: A Yearly Check" article.
+await render('nominee-on-every-asset-yearly-check-hero', 1200, 630, `
+  <circle cx="1060" cy="120" r="240" fill="${GOLD}" opacity="0.07"/>
+  <text x="80" y="150" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="${GOLD}" letter-spacing="2">FAMILY FINANCIAL PREPAREDNESS</text>
+  <text x="78" y="258" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff">A Nominee on Every</text>
+  <text x="78" y="330" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff">Asset</text>
+  <text x="78" y="402" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="${GOLD}">A Yearly Check</text>
+  <rect x="80" y="458" width="520" height="2" fill="#ffffff" opacity="0.15"/>
+  <text x="80" y="508" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
