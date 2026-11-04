@@ -11,7 +11,7 @@ https://app.ekosha.co.in.
 Preparedness"*; core message *"Know what you own, and what your family needs to do when it
 matters most."* Voice is **trustworthy, practical, dependable**. Avoid: "wealth management",
 "pass on wealth", "digital locker", "legacy planning", hype and fear-mongering. Describe only
-shipped v1 features (assets, co-owners, nominees, secure sharing) — liabilities/benefits are
+shipped features (assets, co-owners, nominees, secure sharing, renewal reminders + Upcoming renewals page, notification preferences, Vault Setup checklist) — liabilities/benefits are
 roadmap, not live.
 
 ## Tech Stack
@@ -51,7 +51,8 @@ src/
     Nav.astro          # Sticky top nav
     Hero.astro         # Full-width hero with card mockup
     Problem.astro      # 3-card problem statement
-    Features.astro     # 6-card feature grid (id="features")
+    Features.astro     # 10-card feature grid (id="features")
+    Reminders.astro    # Renewal reminders: use cases + notification/renewals-page mocks (id="reminders")
     HowItWorks.astro   # 3-step process (id="how-it-works")
     Security.astro     # 2-col security section (id="security")
     Pricing.astro      # 2-card pricing (id="pricing")
@@ -100,13 +101,14 @@ public/
 - Hero: `bg-brand-navy`
 - Problem: `bg-brand-bg`
 - Features: `bg-white`
+- Reminders: `bg-brand-navy`
 - HowItWorks: `bg-brand-bg`
 - Security: `bg-white`
 - Pricing: `bg-brand-bg`
 - FAQ: `bg-white`
 
 ### Section IDs for nav scroll links
-`#features`, `#how-it-works`, `#security`, `#pricing`, `#faq`
+`#features`, `#reminders`, `#how-it-works`, `#security`, `#pricing`, `#faq`
 
 ### CTA target
 All buttons and "Get Started" / "Log In" links use: `https://app.ekosha.co.in`
@@ -141,7 +143,7 @@ Define as a local constant `const APP_URL = 'https://app.ekosha.co.in'` in each 
   Store → `play_store`, App Store → `app_store`) — this is the true website→app conversion, distinct
   from internal `/invite` navigation; `faq_opened {question, path}` on opening a FAQ `<details>`
   (labelled via `data-faq` in `FAQ.astro`); `section_viewed {section, path}` once per page when a
-  homepage section (`features`/`how-it-works`/`security`/`pricing`/`faq`) scrolls into view;
+  homepage section (`features`/`reminders`/`how-it-works`/`security`/`pricing`/`faq`) scrolls into view;
   `scroll_depth {percent, path}` at the 25/50/75/100% milestones. Attribution (UTM source/medium/
   campaign, referrer, geo) is captured automatically by PostHog on `$pageview` and surfaces as
   `$initial_*` person properties once a visitor later identifies in the app via the shared

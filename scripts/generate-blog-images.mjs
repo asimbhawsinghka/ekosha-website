@@ -221,3 +221,35 @@ await render('where-should-your-family-financial-information-live-hero', 1200, 6
   <text x="80" y="492" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
 
 console.log('Blog images generated.');
+
+// 17) Hero — "Renewal dates families forget" article.
+await render('renewal-dates-families-forget-hero', 1200, 630, `
+  <circle cx="1060" cy="120" r="240" fill="${GOLD}" opacity="0.07"/>
+  <text x="80" y="150" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="${GOLD}" letter-spacing="2">FAMILY FINANCIAL PREPAREDNESS</text>
+  <text x="78" y="258" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="800" fill="#ffffff">The Renewal Dates</text>
+  <text x="78" y="326" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="800" fill="#ffffff">Most Families Forget</text>
+  <text x="78" y="394" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="800" fill="${GOLD}">— and How to Catch Them</text>
+  <rect x="80" y="450" width="520" height="2" fill="#ffffff" opacity="0.15"/>
+  <text x="80" y="500" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
+
+// 18) Inline — the reminder timeline (7 / 3 / 1 / due day).
+await render('renewal-reminder-timeline', 1200, 460, `
+  <text x="60" y="80" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff">A reminder at each step, not just on the day</text>
+  <line x1="140" y1="230" x2="1060" y2="230" stroke="${GOLD}" stroke-opacity="0.45" stroke-width="3"/>
+  ${[
+    ['7 days', 'Arrange the payment', 140], ['3 days', 'Second reminder', 450],
+    ['1 day', 'Last easy chance', 760], ['Due day', 'Renew or update', 1060],
+  ].map(([t, d, x], i) => `
+    <circle cx="${x}" cy="230" r="${i === 3 ? 22 : 16}" fill="${GOLD}"/>
+    <text x="${x}" y="${i === 3 ? 300 : 292}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#ffffff">${t}</text>
+    <text x="${x}" y="338" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#ffffff" opacity="0.72">${d}</text>`).join('')}`);
+
+// 19) Hero — "Nominee on Every Asset: A Yearly Check" article.
+await render('nominee-on-every-asset-yearly-check-hero', 1200, 630, `
+  <circle cx="1060" cy="120" r="240" fill="${GOLD}" opacity="0.07"/>
+  <text x="80" y="150" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="${GOLD}" letter-spacing="2">FAMILY FINANCIAL PREPAREDNESS</text>
+  <text x="78" y="258" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff">A Nominee on Every</text>
+  <text x="78" y="330" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff">Asset</text>
+  <text x="78" y="402" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="${GOLD}">A Yearly Check</text>
+  <rect x="80" y="458" width="520" height="2" fill="#ffffff" opacity="0.15"/>
+  <text x="80" y="508" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.85">eKosha · Private · Encrypted · Family-first</text>`);
