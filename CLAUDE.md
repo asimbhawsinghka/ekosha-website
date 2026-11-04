@@ -50,7 +50,7 @@ src/
   components/
     Nav.astro          # Sticky top nav
     Hero.astro         # Full-width hero with card mockup
-    Problem.astro      # 3-card problem statement
+    Problem.astro      # 4-card problem statement (incl. missed renewal dates)
     Features.astro     # 10-card feature grid (id="features")
     Reminders.astro    # Renewal reminders: use cases + notification/renewals-page mocks (id="reminders")
     HowItWorks.astro   # 3-step process (id="how-it-works")

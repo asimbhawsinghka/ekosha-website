@@ -15,6 +15,11 @@ const problems = [
     title: 'Sharing sensitive data feels risky',
     body: 'Passing account numbers over WhatsApp or leaving documents in an unlocked drawer exposes your family to real risk.',
   },
+  {
+    icon: '⏰',
+    title: 'Renewal dates slip by',
+    body: 'Insurance premiums, FD maturities and PPF deadlines arrive once a year, across different institutions — and a missed one can mean a lapsed policy.',
+  },
 ];
 ---
 <section class="bg-brand-bg py-24">
@@ -32,7 +37,7 @@ const problems = [
       <div class="w-14 h-1 bg-brand-gold rounded-full"></div>
     </div>
 
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {problems.map(p => (
         <div class="bg-white rounded-2xl p-8 shadow-sm border border-brand-navy/8">
           <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-3xl mb-5">
