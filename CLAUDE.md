@@ -11,7 +11,7 @@ https://app.ekosha.co.in.
 Preparedness"*; core message *"Know what you own, and what your family needs to do when it
 matters most."* Voice is **trustworthy, practical, dependable**. Avoid: "wealth management",
 "pass on wealth", "digital locker", "legacy planning", hype and fear-mongering. Describe only
-shipped features (assets, co-owners, nominees, secure sharing, renewal reminders + Upcoming renewals page, notification preferences, Vault Setup checklist) — liabilities/benefits are
+shipped features (assets, co-owners, nominees, secure sharing, renewal reminders + Upcoming renewals page, notification preferences, Vault Setup checklist, AI "Fill from a document", CAMS/KFintech/NSDL/CDSL statement import, documents attached to assets, asset detail page) — liabilities/benefits are
 roadmap, not live.
 
 ## Tech Stack
@@ -51,7 +51,7 @@ src/
     Nav.astro          # Sticky top nav
     Hero.astro         # Full-width hero with card mockup
     Problem.astro      # 4-card problem statement (incl. missed renewal dates)
-    Features.astro     # 10-card feature grid (id="features")
+    Features.astro     # 13-card feature grid (id="features")
     Reminders.astro    # Renewal reminders: use cases + notification/renewals-page mocks (id="reminders")
     HowItWorks.astro   # 3-step process (id="how-it-works")
     Security.astro     # 2-col security section (id="security")
