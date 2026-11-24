@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /ingest
 
 Sitemap: https://ekosha.co.in/sitemap-index.xml

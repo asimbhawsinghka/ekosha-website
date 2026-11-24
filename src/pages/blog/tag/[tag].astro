@@ -6,6 +6,7 @@ import Footer from '../../../components/Footer.astro';
 import NewsletterSignup from '../../../components/NewsletterSignup.astro';
 import BlogPostCard from '../../../components/BlogPostCard.astro';
 import { tagSlug } from '../../../lib/tagSlug';
+import { MIN_POSTS_FOR_INDEXABLE_TAG } from '../../../lib/tagIndexing.mjs';
 
 // One static page per unique tag used across non-draft posts, so readers can
 // browse the blog by topic instead of only by date.
@@ -34,7 +35,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft && data.tag
 const title = `“${tag}” Articles — The eKosha Blog`;
 const description = `Articles tagged “${tag}” on the eKosha blog — practical, calm guidance on organising your family's finances.`;
 ---
-<Layout title={title} description={description}>
+<Layout title={title} description={description} noindex={posts.length < MIN_POSTS_FOR_INDEXABLE_TAG}>
   <Nav />
 
   <main class="bg-white">
