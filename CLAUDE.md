@@ -98,10 +98,10 @@ public/
 
 ## Security & privacy copy rules
 - Say only what the app does: data hosted in Mumbai (asia-south1) on Google Firebase; asset details, titles and
-  documents encrypted before storage; per-user keys for contact details; access checked on every request;
+  documents encrypted before storage; contact details separately encrypted; access checked on every request;
   PIN/biometric lock on mobile; no selling of data, no ads.
 - Never claim "end-to-end", "zero-knowledge", "not even us", "bank-grade" or certifications. Say nothing about
-  staff access. Lead with plain language; AES-256 appears only in the "technically curious" note.
+  staff access. Lead with plain language; AES-256 appears only in the "technically curious" note. Never name key-derivation methods (PBKDF2) or describe the key design (per-user vs shared).
 - Do not write about breaches or hacking; keep the tone calm and confident.
 - Keep processors/locations identical to `privacy.astro` and the app's policy + consent text.
 
