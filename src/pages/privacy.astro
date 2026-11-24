@@ -61,8 +61,13 @@ import Footer from '../components/Footer.astro';
             </tr>
             <tr class="bg-brand-bg/50">
               <td class="px-4 py-2 border border-brand-navy/10">Usage data</td>
-              <td class="px-4 py-2 border border-brand-navy/10">Feature interactions, session timestamps</td>
-              <td class="px-4 py-2 border border-brand-navy/10">Improve app performance</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Feature interactions, screen views, session timestamps</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Improve app performance — collected only with your optional Analytics consent, via PostHog</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Performance &amp; diagnostics data</td>
+              <td class="px-4 py-2 border border-brand-navy/10">App start time, screen rendering time, network request latency</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Monitor and improve app performance and stability — collected only with your optional Analytics consent, via Firebase Performance Monitoring</td>
             </tr>
             <tr>
               <td class="px-4 py-2 border border-brand-navy/10">Device data</td>
@@ -80,7 +85,12 @@ import Footer from '../components/Footer.astro';
       <ol class="list-decimal list-inside space-y-2 text-brand-text text-sm leading-relaxed">
         <li><strong>Profile &amp; Asset Data</strong> — to provide, operate, and maintain the eKosha service.</li>
         <li><strong>Cross-Border Transfer</strong> — your database and application servers are hosted in <strong>India (Mumbai)</strong> on Google Firebase. Some supporting services process limited data outside India: in the United States (Resend, RevenueCat, and Google's authentication, crash reporting and performance services), in the European Union — Frankfurt, Germany (PostHog), and, only when you choose AI document reading, by Google's Gemini service. See Sections 3 and 4.</li>
-        <li><strong>Analytics</strong> <em>(optional)</em> — to understand how users interact with the app and improve features.</li>
+        <li><strong>Analytics</strong> <em>(optional)</em> — to understand how users interact with the app and improve features and performance. This covers two kinds of data, both governed by this single optional consent:
+          <ul class="list-disc list-inside mt-2 ml-4 space-y-1">
+            <li><strong>Usage analytics</strong> via <strong>PostHog</strong> (EU cloud) — event-level feature usage and screen views.</li>
+            <li><strong>Performance &amp; diagnostics</strong> via <strong>Firebase Performance Monitoring</strong> (Google, United States) — technical measurements such as app start time, screen rendering time, and network request latency.</li>
+          </ul>
+          Neither ever includes your name, email, asset names, or financial values. You can decline this purpose when you first consent, and withdraw it at any time in <strong>Settings → Privacy &amp; Data</strong>; collection stops immediately for both PostHog and Firebase Performance.</li>
         <li><strong>Marketing Notifications</strong> <em>(optional)</em> — to inform you about new features, tips, and promotions.</li>
         <li><strong>AI document reading</strong> <em>(only when you use it)</em> — when you choose to import a photo or PDF (other than a mutual fund or demat statement), its content is sent once to Google's Gemini service under a no-training agreement, used to pre-fill the entry form, and not stored there. Nothing is saved until you review and confirm it. You are asked for your permission before first use and can turn it off in Settings.</li>
       </ol>
@@ -147,6 +157,45 @@ import Footer from '../components/Footer.astro';
         Your account and asset data is stored on Google Firebase in <strong>India (Mumbai)</strong>. Limited data is processed outside India by the following services:
       </p>
       <ul class="space-y-2 text-sm text-brand-text mt-3 mb-3">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>United States</strong> — Google's authentication, crash reporting, push messaging and optional consent-based performance &amp; diagnostics services, Resend (email), and RevenueCat (subscriptions).</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>European Union (Frankfurt, Germany)</strong> — PostHog (optional, consent-based analytics), processed within the EU and not transferred to the United States by us.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Outside India (location determined by Google)</strong> — Google Gemini, only when you choose AI document reading.</span></li>
+      </ul>
+      <p class="text-brand-text leading-relaxed">
+        These transfers are covered by your explicit consent given during onboarding. The safeguards in place include contractual clauses and the data processors' compliance with applicable international data protection standards.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">5. Data Retention</h2>
+      <p class="text-brand-text leading-relaxed">
+        We retain your data for as long as your account is active, plus a maximum of <strong>30 days</strong> after account deletion (grace period for cancellation).
+        Audit logs related to consent are retained for <strong>7 years</strong> as required by applicable law.
+      </p>
+      <p class="text-brand-text leading-relaxed mt-3">
+        Analytics and performance data are retained according to the retention settings of our PostHog project and Firebase Performance Monitoring respectively.
+        If you withdraw Analytics consent, no further analytics or performance data are collected; to request deletion of previously collected analytics or performance data, contact our Grievance Officer (see Section 9).
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">6. Your Rights Under the DPDP Act 2023</h2>
+      <p class="text-brand-text leading-relaxed mb-3">As a Data Principal, you have the following rights:</p>
+      <ul class="space-y-2 text-sm text-brand-text">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Information</strong> — know what data we hold about you.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Correction</strong> — request correction of inaccurate or incomplete data.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Erasure</strong> — request deletion of your personal data (subject to legal hold obligations).</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Grievance Redressal</strong> — lodge a complaint with our Grievance Officer.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Nominate</strong> — nominate a person to exercise rights on your behalf in the event of death or incapacity.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Withdraw Consent</strong> — withdraw any optional consent at any time. For Analytics, you can do this yourself in <strong>Settings → Privacy &amp; Data</strong>; collection stops immediately.</span></li>
+      </ul>
+      <p class="text-brand-text text-sm mt-3">To exercise these rights, please contact our Grievance Officer (see Section 9).</p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">7. Data Security</h2>
+      <p class="text-brand-text leading-relaxed mb-3">We implement the following security measures:</p>
+      <ul class="space-y-2 text-sm text-brand-text">
         <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>AES-256-GCM encryption of sensitive asset details, asset titles and attached documents before they are stored.</span></li>
         <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Contact details such as names and email addresses are separately encrypted.</span></li>
         <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Security rules that check who you are on every request, so records are opened only for you and the people you have shared them with.</span></li>
