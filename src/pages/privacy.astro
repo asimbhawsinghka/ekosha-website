@@ -10,13 +10,13 @@ import Footer from '../components/Footer.astro';
   <Nav />
   <main class="max-w-3xl mx-auto px-6 py-24">
     <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-2">Privacy Policy</h1>
-    <p class="text-brand-muted mb-1 text-sm">Last updated: April 12, 2026</p>
-    <p class="text-brand-muted mb-10 text-sm">Effective date: April 12, 2026 &nbsp;·&nbsp; Policy version: 1.0</p>
+    <p class="text-brand-muted mb-1 text-sm">Last updated: November 24, 2026</p>
+    <p class="text-brand-muted mb-10 text-sm">Effective date: November 24, 2026 &nbsp;·&nbsp; Policy version: 1.2</p>
 
     <section class="mb-10">
       <h2 class="text-xl font-semibold text-brand-navy mb-3">About eKosha</h2>
       <p class="text-brand-text leading-relaxed">
-        eKosha ("we", "our", "us") is a personal asset management and inheritance planning application.
+        eKosha ("we", "our", "us") is a family financial preparedness application that helps you organise important financial information and share it with the people you trust.
         We are committed to protecting your personal data in accordance with the
         <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong> and other applicable laws.
       </p>
@@ -46,8 +46,18 @@ import Footer from '../components/Footer.astro';
             </tr>
             <tr>
               <td class="px-4 py-2 border border-brand-navy/10">Asset data</td>
-              <td class="px-4 py-2 border border-brand-navy/10">Financial account details, insurance policies, property records</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Financial account details, insurance policies, property records, nominee and co-owner details</td>
               <td class="px-4 py-2 border border-brand-navy/10">Core service — asset vault</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Documents you attach</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Policy PDFs, deed photos, statements</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Kept with the asset they belong to; stored encrypted</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Documents you choose to import</td>
+              <td class="px-4 py-2 border border-brand-navy/10">A document or mutual fund / demat statement you pick for "Import from document"</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Read once to pre-fill an entry for you to review. Statement files and their passwords are not stored</td>
             </tr>
             <tr class="bg-brand-bg/50">
               <td class="px-4 py-2 border border-brand-navy/10">Usage data</td>
@@ -69,16 +79,17 @@ import Footer from '../components/Footer.astro';
       <p class="text-brand-text leading-relaxed mb-3">We process your data solely for the purposes to which you have consented:</p>
       <ol class="list-decimal list-inside space-y-2 text-brand-text text-sm leading-relaxed">
         <li><strong>Profile &amp; Asset Data</strong> — to provide, operate, and maintain the eKosha service.</li>
-        <li><strong>Cross-Border Transfer</strong> — to store and process your data on Firebase, Resend, and RevenueCat servers (located in the United States).</li>
+        <li><strong>Cross-Border Transfer</strong> — your database and application servers are hosted in <strong>India (Mumbai)</strong> on Google Firebase. Some supporting services process limited data outside India: in the United States (Resend, RevenueCat, and Google's authentication, crash reporting and performance services), in the European Union — Frankfurt, Germany (PostHog), and, only when you choose AI document reading, by Google's Gemini service. See Sections 3 and 4.</li>
         <li><strong>Analytics</strong> <em>(optional)</em> — to understand how users interact with the app and improve features.</li>
         <li><strong>Marketing Notifications</strong> <em>(optional)</em> — to inform you about new features, tips, and promotions.</li>
+        <li><strong>AI document reading</strong> <em>(only when you use it)</em> — when you choose to import a photo or PDF (other than a mutual fund or demat statement), its content is sent once to Google's Gemini service under a no-training agreement, used to pre-fill the entry form, and not stored there. Nothing is saved until you review and confirm it. You are asked for your permission before first use and can turn it off in Settings.</li>
       </ol>
     </section>
 
     <section class="mb-10">
       <h2 class="text-xl font-semibold text-brand-navy mb-3">3. Data Sharing and Processors</h2>
       <p class="text-brand-text leading-relaxed mb-4">
-        We share your data only with the following processors, and only as necessary. We do <strong>not</strong> sell your personal data to any third party.
+        We share your data only with the following processors, and only as necessary. Each service does one job only. We do <strong>not</strong> sell your personal data to any third party, and we do not show advertising.
       </p>
       <div class="overflow-x-auto">
         <table class="w-full text-sm text-brand-text border-collapse">
@@ -91,9 +102,19 @@ import Footer from '../components/Footer.astro';
           </thead>
           <tbody>
             <tr>
-              <td class="px-4 py-2 border border-brand-navy/10">Google Firebase</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Google Firebase (database, application servers)</td>
+              <td class="px-4 py-2 border border-brand-navy/10">India (Mumbai)</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Storing your account and asset data and running eKosha</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Google Firebase (authentication, crash reporting, push messaging, performance &amp; diagnostics monitoring)</td>
               <td class="px-4 py-2 border border-brand-navy/10">United States</td>
-              <td class="px-4 py-2 border border-brand-navy/10">Database, authentication, analytics, crash reporting</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Sign-in, stability, notifications; performance monitoring is optional and consent-based</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">Google Gemini</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Outside India (determined by Google)</td>
+              <td class="px-4 py-2 border border-brand-navy/10">AI document reading — only when you choose to use it</td>
             </tr>
             <tr class="bg-brand-bg/50">
               <td class="px-4 py-2 border border-brand-navy/10">Resend</td>
@@ -103,7 +124,17 @@ import Footer from '../components/Footer.astro';
             <tr>
               <td class="px-4 py-2 border border-brand-navy/10">RevenueCat</td>
               <td class="px-4 py-2 border border-brand-navy/10">United States</td>
-              <td class="px-4 py-2 border border-brand-navy/10">In-app subscription management</td>
+              <td class="px-4 py-2 border border-brand-navy/10">In-app subscription management (Android)</td>
+            </tr>
+            <tr class="bg-brand-bg/50">
+              <td class="px-4 py-2 border border-brand-navy/10">Razorpay</td>
+              <td class="px-4 py-2 border border-brand-navy/10">India</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Subscription payments on the web</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-brand-navy/10">PostHog</td>
+              <td class="px-4 py-2 border border-brand-navy/10">European Union (Frankfurt, Germany)</td>
+              <td class="px-4 py-2 border border-brand-navy/10">Product analytics (optional, consent-based)</td>
             </tr>
           </tbody>
         </table>
@@ -113,41 +144,14 @@ import Footer from '../components/Footer.astro';
     <section class="mb-10">
       <h2 class="text-xl font-semibold text-brand-navy mb-3">4. Cross-Border Data Transfer</h2>
       <p class="text-brand-text leading-relaxed">
-        Your data is transferred to and stored in the <strong>United States</strong>. This transfer is covered by your explicit consent given during onboarding.
-        The safeguards in place include contractual clauses and the data processors' compliance with applicable international data protection standards.
+        Your account and asset data is stored on Google Firebase in <strong>India (Mumbai)</strong>. Limited data is processed outside India by the following services:
       </p>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold text-brand-navy mb-3">5. Data Retention</h2>
-      <p class="text-brand-text leading-relaxed">
-        We retain your data for as long as your account is active, plus a maximum of <strong>30 days</strong> after account deletion (grace period for cancellation).
-        Audit logs related to consent are retained for <strong>7 years</strong> as required by applicable law.
-      </p>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold text-brand-navy mb-3">6. Your Rights Under the DPDP Act 2023</h2>
-      <p class="text-brand-text leading-relaxed mb-3">As a Data Principal, you have the following rights:</p>
-      <ul class="space-y-2 text-sm text-brand-text">
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Information</strong> — know what data we hold about you.</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Correction</strong> — request correction of inaccurate or incomplete data.</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Erasure</strong> — request deletion of your personal data (subject to legal hold obligations).</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Grievance Redressal</strong> — lodge a complaint with our Grievance Officer.</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong>Right to Nominate</strong> — nominate a person to exercise rights on your behalf in the event of death or incapacity.</span></li>
-      </ul>
-      <p class="text-brand-text text-sm mt-3">To exercise these rights, please contact our Grievance Officer (see Section 9).</p>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold text-brand-navy mb-3">7. Data Security</h2>
-      <p class="text-brand-text leading-relaxed mb-3">We implement the following security measures:</p>
-      <ul class="space-y-2 text-sm text-brand-text">
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>AES-256-GCM field-level encryption for sensitive asset data.</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>PBKDF2 key derivation with per-user salt.</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Firebase Security Rules restricting access by authenticated UID only.</span></li>
+      <ul class="space-y-2 text-sm text-brand-text mt-3 mb-3">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>AES-256-GCM encryption of sensitive asset details, asset titles and attached documents before they are stored.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Contact details such as names and email addresses are encrypted with a separate key for each user.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Security rules that check who you are on every request, so records are opened only for you and the people you have shared them with.</span></li>
         <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>PIN / biometric lock on mobile devices.</span></li>
-        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Immutable audit logs for all data access and changes.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Audit logs of important actions and changes.</span></li>
       </ul>
     </section>
 
@@ -175,6 +179,9 @@ import Footer from '../components/Footer.astro';
       <p class="text-brand-text leading-relaxed">
         We will notify you of any material changes to this policy through the app. Continued use after notification constitutes acceptance of the updated policy.
         Where required by law, we will seek fresh consent.
+      </p>
+      <p class="text-brand-text leading-relaxed mt-3">
+        This version (<strong>1.2</strong>) states that your database and application servers are hosted in India (Mumbai), corrects the list of services that process limited data outside India, and adds Razorpay (web payments), Google Gemini (AI document reading, only when you choose it), and document attachments and statement import to this policy. Because the cross-border disclosure has changed, all users are asked to review and accept the updated consent in-app before continuing to use eKosha.
       </p>
     </section>
 

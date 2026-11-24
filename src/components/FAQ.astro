@@ -2,7 +2,23 @@
 const faqs = [
   {
     q: 'Is my financial data safe?',
-    a: 'Yes. All data is encrypted end-to-end using AES-256 before it leaves your device. Even the eKosha team cannot read your vault contents. Only you and the family members you explicitly invite can access your data.',
+    a: 'Your information is protected in layers. Asset details, titles and attached documents are encrypted before they are stored, access is checked on every request so only you and the people you choose can open them, and on your phone you can add a PIN or biometric lock. Your data is hosted on Google Firebase in Mumbai, and you decide who sees each asset.',
+  },
+  {
+    q: 'Can strangers see my information?',
+    a: 'No. Your information is visible only to you and to the family members, nominees or co-owners you choose. Other eKosha users cannot see it, and you can change or remove access at any time.',
+  },
+  {
+    q: 'Who do you share my data with?',
+    a: 'We do not sell your data and we do not show ads. A small number of trusted services each do one job: Google Firebase hosts your data in Mumbai, Resend sends emails, RevenueCat and Razorpay handle subscription payments, PostHog gives us optional usage statistics, and Google Gemini reads a document only if you choose to import one. The full list is in our Privacy Policy.',
+  },
+  {
+    q: 'What happens to documents I upload?',
+    a: 'Documents you attach to an asset are encrypted before they are stored, and can be viewed by you and the family you have shared that asset with. Documents you import to pre-fill an entry are read once. Mutual fund and demat statements and their passwords are not stored, and AI reading happens only if you choose it and give permission.',
+  },
+  {
+    q: 'Can I delete everything?',
+    a: 'Yes. You can delete your account at any time from Settings, and our delete-account page explains exactly what is removed.',
   },
   {
     q: 'Who can see my assets?',

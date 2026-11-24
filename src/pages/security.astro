@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const whoSees = [
+  { who: 'You', what: 'Everything you add.' },
+  { who: 'Family you share with', what: 'Only the assets you choose, with view or edit access, and an expiry date if you set one.' },
+  { who: 'Nominees and co-owners', what: 'Only the assets they are named on.' },
+  { who: 'Other eKosha users', what: 'Nothing.' },
+];
+const services = [
+  { name: 'Google Firebase', job: 'Hosts your account and asset data in Mumbai, India, and handles sign-in and notifications.' },
+  { name: 'Resend', job: 'Sends the emails you receive from eKosha.' },
+  { name: 'RevenueCat and Razorpay', job: 'Handle Premium subscription payments, on Android and on the web.' },
+  { name: 'PostHog', job: 'Optional, anonymised usage statistics that help us improve eKosha. You can switch this off in Settings.' },
+  { name: 'Google Gemini', job: 'Reads a document only if you choose to import one, once, under a no-training agreement. Nothing is saved until you confirm it.' },
+];
+const layers = [
+  { title: 'Scrambled before it is stored', body: 'Asset details, titles and attached documents are encrypted before they are stored, so they are never kept as plain text.' },
+  { title: 'Checked on every request', body: 'Each request is checked, so your information opens only for you and the people you have shared it with.' },
+  { title: 'A lock on your phone', body: 'On your phone, you can require a PIN or fingerprint to open the app.' },
+  { title: 'Trusted infrastructure', body: 'Your data is hosted on Google Firebase in Mumbai, India.' },
+];
+---
+<Layout
+  title="Security & Privacy — eKosha"
+  description="Who can see your information on eKosha, where it is stored, which services help us run it, and how you stay in control."
+>
+  <Nav />
+  <main class="max-w-3xl mx-auto px-6 py-24">
+    <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-3">Your data, your control</h1>
+    <div class="w-14 h-1 bg-brand-gold rounded-full mb-6"></div>
+    <p class="text-brand-muted text-lg leading-relaxed mb-12">
+      eKosha exists to help your family stay prepared, and that starts with keeping your
+      information private. Here is who can see what, where it lives and how you stay in control.
+    </p>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-brand-navy mb-4">Who can see what</h2>
+      <div class="rounded-xl border border-brand-navy/10 overflow-hidden">
+        <table class="w-full text-sm">
+          <caption class="sr-only">Who can see what</caption>
+          <tbody>
+            {whoSees.map((r, i) => (
+              <tr class={i > 0 ? 'border-t border-brand-navy/10' : ''}>
+                <th scope="row" class="text-left align-top px-4 py-3 font-semibold text-brand-navy w-48">{r.who}</th>
+                <td class="px-4 py-3 text-brand-text">{r.what}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-brand-navy mb-4">Protected in layers</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {layers.map(l => (
+          <div class="bg-brand-bg rounded-xl p-5 border border-brand-navy/8">
+            <h3 class="font-bold text-brand-navy text-sm mb-1">{l.title}</h3>
+            <p class="text-brand-muted text-sm leading-relaxed">{l.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">Where your data lives</h2>
+      <p class="text-brand-text leading-relaxed">
+        Your account and asset data is stored on Google Firebase in <strong>Mumbai, India</strong>.
+        A few supporting services, listed below, process limited data elsewhere. The{' '}
+        <a href="/privacy/" class="text-brand-gold underline">Privacy Policy</a> gives the location of each.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">No selling, no ads, a few trusted helpers</h2>
+      <p class="text-brand-text leading-relaxed mb-4">
+        We do not sell your data and we do not show advertising. Each service below does one job only.
+      </p>
+      <ul class="space-y-3 text-sm text-brand-text">
+        {services.map(s => (
+          <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span><strong class="text-brand-navy">{s.name}.</strong> {s.job}</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">Always your call</h2>
+      <ul class="space-y-2 text-sm text-brand-text">
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Share only the assets you choose, with view or edit access.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Set an expiry date if you want one, and remove access whenever you like.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Switch analytics and AI document reading on or off in Settings.</span></li>
+        <li class="flex gap-2"><span class="text-brand-gold font-bold shrink-0">·</span><span>Delete your account at any time. <a href="/delete-account/" class="text-brand-gold underline">See what is removed</a>.</span></li>
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">For the technically curious</h2>
+      <p class="text-brand-text text-sm leading-relaxed">
+        Asset details, titles and attached documents are encrypted with AES-256 before they are stored.
+        Contact details such as names and email addresses are encrypted with a separate key for each user,
+        and keys are derived using PBKDF2. Security rules check the signed-in user on every request.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="text-xl font-semibold text-brand-navy mb-3">Questions?</h2>
+      <p class="text-brand-text leading-relaxed">
+        Write to <a href="mailto:privacy@ekosha.co.in" class="text-brand-gold underline">privacy@ekosha.co.in</a>,
+        or read the <a href="/privacy/" class="text-brand-gold underline">Privacy Policy</a> and
+        <a href="/terms/" class="text-brand-gold underline">Terms of Service</a>.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
