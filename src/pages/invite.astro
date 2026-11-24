@@ -25,9 +25,31 @@ const APP_STORE_URL = 'https://apps.apple.com/app/id0000000000';
     PLAY_STORE_LIVE is ever flipped back to false.
     This runs before Nav/main render to avoid a flash of the default block.
   -->
-  <script is:inline define:vars={{ redirectUrl: PLAY_STORE_LIVE ? PLAY_STORE_URL : APP_URL }}>
+  <!--
+    Campaign attribution: only utm_* params are forwarded to Play as the
+    install `referrer` (Play Console then reports installs per source). The
+    invite `token` is deliberately NOT forwarded — it must not leak into
+    Play's referrer. The web-app fallback is left untouched (no referrer).
+  -->
+  <script is:inline define:vars={{ redirectUrl: PLAY_STORE_LIVE ? PLAY_STORE_URL : APP_URL, isPlay: PLAY_STORE_LIVE }}>
+    window.__ekoshaStoreUrl = function (base) {
+      try {
+        var src = new URLSearchParams(window.location.search);
+        var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+        var out = new URLSearchParams();
+        keys.forEach(function (k) {
+          var v = src.get(k);
+          if (v) out.set(k, v.slice(0, 100));
+        });
+        var qs = out.toString();
+        if (!qs) return base;
+        return base + (base.indexOf('?') === -1 ? '?' : '&') + 'referrer=' + encodeURIComponent(qs);
+      } catch (e) {
+        return base;
+      }
+    };
     if (/Android/.test(navigator.userAgent)) {
-      window.location.replace(redirectUrl);
+      window.location.replace(isPlay ? window.__ekoshaStoreUrl(redirectUrl) : redirectUrl);
     }
   </script>
   <Nav />
@@ -170,6 +192,12 @@ const APP_STORE_URL = 'https://apps.apple.com/app/id0000000000';
     // logic matches the recipient by email, so nothing here blocks or branches on it.
     const token = new URLSearchParams(window.location.search).get('token');
     if (token) sessionStorage.setItem('invite_token', token);
+
+    // Desktop / non-redirected visitors: tag the Play badge with the same utm referrer.
+    var playBadge = document.querySelector('[data-cta="invite_play_store"]');
+    if (playBadge && window.__ekoshaStoreUrl) {
+      playBadge.setAttribute('href', window.__ekoshaStoreUrl(playBadge.getAttribute('href')));
+    }
 
     // iPadOS 13+ reports as "Macintosh" but exposes touch support, unlike a
     // real Mac — that combination is the standard way to distinguish it.
