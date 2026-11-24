@@ -39,7 +39,7 @@ const {
 
 const APP_URL = 'https://app.ekosha.co.in';
 const siteURL = Astro.site?.toString().replace(/\/$/, '') ?? 'https://ekosha.co.in';
-const postURL = `${siteURL}/blog/${slug}`;
+const postURL = `${siteURL}/blog/${slug}/`;
 
 const dateFmt = (d: Date) =>
   new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
