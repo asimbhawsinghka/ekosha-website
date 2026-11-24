@@ -11,7 +11,7 @@ https://app.ekosha.co.in.
 Preparedness"*; core message *"Know what you own, and what your family needs to do when it
 matters most."* Voice is **trustworthy, practical, dependable**. Avoid: "wealth management",
 "pass on wealth", "digital locker", "legacy planning", hype and fear-mongering. Describe only
-shipped features (assets, co-owners, nominees, secure sharing, renewal reminders + Upcoming renewals page, notification preferences, Vault Setup checklist) — liabilities/benefits are
+shipped features (assets, co-owners, nominees, secure sharing, renewal reminders + Upcoming renewals page, notification preferences, Vault Setup checklist, AI "Fill from a document", CAMS/KFintech/NSDL/CDSL statement import, documents attached to assets, asset detail page) — liabilities/benefits are
 roadmap, not live.
 
 ## Tech Stack
@@ -51,10 +51,10 @@ src/
     Nav.astro          # Sticky top nav
     Hero.astro         # Full-width hero with card mockup
     Problem.astro      # 4-card problem statement (incl. missed renewal dates)
-    Features.astro     # 10-card feature grid (id="features")
+    Features.astro     # 13-card feature grid (id="features")
     Reminders.astro    # Renewal reminders: use cases + notification/renewals-page mocks (id="reminders")
     HowItWorks.astro   # 3-step process (id="how-it-works")
-    Security.astro     # 2-col security section (id="security")
+    Security.astro     # "Your data, your control" section (id="security"): who-sees-what table + 6 cards, links to /security/
     Pricing.astro      # 2-card pricing (id="pricing")
     FAQ.astro          # Native details/summary accordion (id="faq")
     Footer.astro       # CTA band + bottom bar (+ Blog link)
@@ -70,7 +70,8 @@ src/
     blog/index.astro   # Blog listing page
     blog/[...slug].astro # Per-article route from the collection
     rss.xml.js         # RSS feed at /rss.xml (@astrojs/rss)
-    privacy.astro      # Privacy policy stub (4 sections)
+    security.astro     # /security/ — who sees what, hosting (Mumbai), services used, user controls
+    privacy.astro      # Privacy policy (v1.2 — mirror of the app's assets/legal/privacy_policy.md)
     terms.astro        # Terms of service stub (4 sections)
   assets/
     blog/              # Generated on-brand article images (npm run blog:images)
@@ -94,6 +95,15 @@ public/
   Netlify **Forms** tab. CSP `form-action 'self'` already permits it. `Analytics.astro` fires
   a `newsletter_signup` PostHog event on submit. To send campaigns later, pipe submissions to
   an ESP (the app already uses Resend).
+
+## Security & privacy copy rules
+- Say only what the app does: data hosted in Mumbai (asia-south1) on Google Firebase; asset details, titles and
+  documents encrypted before storage; per-user keys for contact details; access checked on every request;
+  PIN/biometric lock on mobile; no selling of data, no ads.
+- Never claim "end-to-end", "zero-knowledge", "not even us", "bank-grade" or certifications. Say nothing about
+  staff access. Lead with plain language; AES-256 appears only in the "technically curious" note.
+- Do not write about breaches or hacking; keep the tone calm and confident.
+- Keep processors/locations identical to `privacy.astro` and the app's policy + consent text.
 
 ## Component Patterns
 

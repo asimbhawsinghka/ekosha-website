@@ -1,64 +1,86 @@
 ---
 const securityCards = [
-  { icon: '🔐', title: 'AES-256 Encryption', body: 'Your vault data is encrypted with AES-256 at rest — the same standard used by banks.' },
-  { icon: '🔑', title: 'PBKDF2 Key Derivation', body: 'Encryption keys are derived from your credentials using PBKDF2 — never stored in plain text.' },
-  { icon: '🧅', title: 'Two-layer Key Design', body: 'A vault key encrypts your data; a separate key encrypts the vault key — double protection.' },
-  { icon: '☁️', title: 'Firebase Infrastructure', body: 'Backed by Google Firebase, certified to ISO 27001, SOC 2, and multiple global standards.' },
-  { icon: '🙈', title: 'We Cannot Read Your Data', body: 'Zero-knowledge design means eKosha staff can never access your decrypted vault contents.' },
-  { icon: '🔏', title: 'PIN & Biometric Lock', body: 'Every app session requires your PIN or biometric — even if someone unlocks your phone.' },
+  { icon: '🔐', title: 'Scrambled Before It Is Stored', body: 'Asset details and attached documents are encrypted before they are stored, so they are never kept as plain text.' },
+  { icon: '🪪', title: 'Checked on Every Request', body: 'Each request is checked, so your information opens only for you and the people you have shared it with.' },
+  { icon: '🤝', title: 'Always Your Call', body: 'Choose who sees which asset, set an expiry if you like, and take access back whenever you want.' },
+  { icon: '📍', title: 'Hosted in Mumbai', body: 'Your account and asset data is stored on Google Firebase in India.' },
+  { icon: '🔏', title: 'PIN & Biometric Lock', body: 'On your phone, you can require a PIN or fingerprint to open the app, even if someone else uses your phone.' },
+  { icon: '🚫', title: 'No Selling, No Ads', body: 'We do not sell your data or show ads. A few trusted services each do one job, and you can see the list.' },
+];
+const whoSees = [
+  { who: 'You', what: 'Everything you add' },
+  { who: 'Family you share with', what: 'Only the assets you choose, with view or edit access' },
+  { who: 'Nominees and co-owners', what: 'Only the assets they are named on' },
+  { who: 'Other eKosha users', what: 'Nothing' },
 ];
 ---
 <section id="security" class="bg-white py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
       <!-- Left: trust content -->
       <div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-3 tracking-tight">
-          Built with the same standards as enterprise banking.
+          You decide who sees what. Nobody else does.
         </h2>
-        <!-- Gold rule — left-aligned -->
         <div class="w-14 h-1 bg-brand-gold rounded-full mb-6"></div>
         <p class="text-brand-muted text-lg leading-relaxed mb-8">
-          Your family's financial data is among the most sensitive information you own.
-          We built eKosha with the same security standards used by leading financial
-          institutions — so you can trust us with what matters most.
+          Your family's financial information is protected in layers: scrambled before it is
+          stored, checked on every request, and shared only with the people you choose.
         </p>
-
-        <!-- Trust badges — brand palette -->
-        <div class="flex flex-wrap gap-3">
+        <!-- Who can see what -->
+        <div class="rounded-xl border border-brand-navy/10 overflow-hidden mb-8">
+          <table class="w-full text-sm">
+            <caption class="sr-only">Who can see what</caption>
+            <thead class="bg-brand-bg">
+              <tr>
+                <th scope="col" class="text-left px-4 py-2.5 font-semibold text-brand-navy">Who</th>
+                <th scope="col" class="text-left px-4 py-2.5 font-semibold text-brand-navy">What they can see</th>
+              </tr>
+            </thead>
+            <tbody>
+              {whoSees.map(r => (
+                <tr class="border-t border-brand-navy/10">
+                  <th scope="row" class="text-left px-4 py-2.5 font-medium text-brand-navy">{r.who}</th>
+                  <td class="px-4 py-2.5 text-brand-muted">{r.what}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-wrap gap-3 mb-8">
           <span class="inline-flex items-center gap-2 bg-brand-navy/8 text-brand-navy text-sm font-semibold px-4 py-2 rounded-full border border-brand-navy/15">
-            <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
-            AES-256 Encrypted
+            Encrypted
           </span>
           <span class="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-navy text-sm font-semibold px-4 py-2 rounded-full border border-brand-gold/25">
-            <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
-            Firebase Certified
+            Hosted in Mumbai
           </span>
           <span class="inline-flex items-center gap-2 bg-brand-navy/8 text-brand-navy text-sm font-semibold px-4 py-2 rounded-full border border-brand-navy/15">
-            <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-3.5 h-3.5 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
-            Zero-knowledge Design
+            You Control Sharing
           </span>
         </div>
+        <a href="/security/" data-cta="security_learn_more" class="inline-flex items-center font-semibold text-brand-navy underline decoration-brand-gold decoration-2 underline-offset-4 hover:text-brand-gold transition-colors">
+          See how we protect your information →
+        </a>
       </div>
-
-      <!-- Right: 2×3 security cards -->
+      <!-- Right: 2×3 cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {securityCards.map(card => (
           <div class="bg-brand-bg rounded-xl p-5 border border-brand-navy/8">
-            <div class="text-2xl mb-3">{card.icon}</div>
-            <h4 class="font-bold text-brand-navy text-sm mb-1">{card.title}</h4>
+            <div class="text-2xl mb-3" aria-hidden="true">{card.icon}</div>
+            <h3 class="font-bold text-brand-navy text-sm mb-1">{card.title}</h3>
             <p class="text-brand-muted text-xs leading-relaxed">{card.body}</p>
           </div>
         ))}
       </div>
-
     </div>
   </div>
 </section>

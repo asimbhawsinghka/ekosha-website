@@ -2,15 +2,31 @@
 const faqs = [
   {
     q: 'Is my financial data safe?',
-    a: 'Yes. All data is encrypted end-to-end using AES-256 before it leaves your device. Even the eKosha team cannot read your vault contents. Only you and the family members you explicitly invite can access your data.',
+    a: 'Your information is protected in layers. Asset details, titles and attached documents are encrypted before they are stored, access is checked on every request so only you and the people you choose can open them, and on your phone you can add a PIN or biometric lock. Your data is hosted on Google Firebase in Mumbai, and you decide who sees each asset.',
+  },
+  {
+    q: 'Can strangers see my information?',
+    a: 'No. Your information is visible only to you and to the family members, nominees or co-owners you choose. Other eKosha users cannot see it, and you can change or remove access at any time.',
+  },
+  {
+    q: 'Who do you share my data with?',
+    a: 'We do not sell your data and we do not show ads. A small number of trusted services each do one job: Google Firebase hosts your data in Mumbai, Resend sends emails, RevenueCat and Razorpay handle subscription payments, PostHog gives us optional usage statistics, and Google Gemini reads a document only if you choose to import one. The full list is in our Privacy Policy.',
+  },
+  {
+    q: 'What happens to documents I upload?',
+    a: 'Documents you attach to an asset are encrypted before they are stored, and can be viewed by you and the family you have shared that asset with. Documents you import to pre-fill an entry are read once. Mutual fund and demat statements and their passwords are not stored, and AI reading happens only if you choose it and give permission.',
+  },
+  {
+    q: 'Can I delete everything?',
+    a: 'Yes. You can delete your account at any time from Settings, and our delete-account page explains exactly what is removed.',
   },
   {
     q: 'Who can see my assets?',
     a: 'Only you — and anyone you choose to share with. You control access at the asset level. Each person you invite sees only what you allow them to see, with read-only or edit permissions.',
   },
   {
-    q: 'What if I forget my password?',
-    a: 'You can recover your account via your registered mobile number using OTP verification. Your encryption keys are derived from your credentials, so a secure recovery flow re-establishes access without exposing your data.',
+    q: 'What if I forget my password or PIN?',
+    a: 'On the sign-in page, choose Reset password, enter your account email and we will send you a link to set a new one. If you signed in with Google, just use Google again. Resetting your password does not affect your assets or shares. If you forget your app PIN, choose Forgot PIN and confirm it is you by signing in to your account again to set a new PIN.',
   },
   {
     q: 'Does eKosha work offline?',
@@ -35,6 +51,18 @@ const faqs = [
   {
     q: 'How is eKosha different from a password manager?',
     a: 'A password manager stores login credentials. eKosha stores structured financial records — account numbers, policy details, property information, nominees and valuations — organised so your family can find and understand what exists when it matters most.',
+  },
+  {
+    q: 'Can eKosha fill in an asset from a document?',
+    a: 'Yes. Pick a policy, statement or other document and eKosha suggests the details for the form, marking every suggested field. Nothing is saved until you review and confirm it, and the app asks your permission before the first use. The Free plan includes 3 of these in total; Premium includes 20 a month.',
+  },
+  {
+    q: 'How does mutual fund and demat statement import work?',
+    a: 'Upload your CAMS, KFintech, NSDL or CDSL statement and enter its password. You choose which schemes or holdings to import and eKosha creates one asset for each. Only names and identifiers are imported, not values or transactions, and the statement and its password are not stored. The Free plan includes 2 imports in total; Premium includes 12 a month.',
+  },
+  {
+    q: 'Can I attach documents to an asset?',
+    a: 'Yes. Attach policy PDFs, deed photos or statements (up to 5 per asset) to the asset they belong to. Family members you have shared that asset with can view them. The Free plan includes 25 MB of space and Premium includes 1 GB.',
   },
 ];
 
