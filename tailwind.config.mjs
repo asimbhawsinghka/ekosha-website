@@ -1,4 +1,11 @@
+import { readFileSync } from 'node:fs';
+import { URL } from 'node:url';
 import typography from '@tailwindcss/typography';
+
+// EDL tokens (vendored from ekosha-foundation; see design/README.md).
+const tokens = JSON.parse(readFileSync(new URL('./design/tokens.json', import.meta.url), 'utf-8'));
+const light = tokens.colors.light;
+const tones = tokens.colors.tones.light;
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,14 +15,24 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Existing brand names, now sourced from the EDL tokens (values unchanged).
         brand: {
-          navy: '#0E2240',
-          gold: '#E0B341',
-          bg: '#F6F5F0',
-          text: '#1A1A1A',
-          muted: '#4A4A4A',
-          tertiary: '#0D3B66',
+          navy: light.navy,
+          gold: light.spark,
+          bg: light.ivory,
+          text: light.ink,
+          muted: light.ink2,
+          tertiary: light.navyMid,
+          // Added with EDL: gold-coloured TEXT/ICONS on light surfaces (>= 4.5:1).
+          // `brand.gold` is a fill (or text on navy only) — never text on white/ivory.
+          goldInk: light.goldInk,
+          line: light.line,
+          lineStrong: light.lineStrong,
         },
+        // Calm semantic tones (EDL §3.1.3): foreground on soft container.
+        tone: Object.fromEntries(
+          Object.entries(tones).map(([name, v]) => [name, { fg: v.fg, bg: v.bg }]),
+        ),
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

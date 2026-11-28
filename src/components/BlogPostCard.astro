@@ -32,7 +32,7 @@ const dateFmt = (d: Date) =>
       ))}
     </div>
     <a href={`/blog/${post.slug}/`} class="block">
-      <h2 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">{post.data.title}</h2>
+      <h2 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-goldInk transition-colors">{post.data.title}</h2>
       <p class="text-brand-muted text-sm leading-relaxed mb-4">{post.data.description}</p>
     </a>
     <p class="text-xs text-brand-muted">{dateFmt(post.data.pubDate)}</p>

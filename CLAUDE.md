@@ -14,6 +14,14 @@ matters most."* Voice is **trustworthy, practical, dependable**. Avoid: "wealth 
 shipped features (assets, co-owners, nominees, secure sharing, renewal reminders + Upcoming renewals page, notification preferences, Vault Setup checklist, AI "Fill from a document", CAMS/KFintech/NSDL/CDSL statement import, documents attached to assets, asset detail page) — liabilities/benefits are
 roadmap, not live.
 
+## Design language (EDL)
+The site follows the **eKosha Design Language** in `ekosha-foundation/02-brand/design-language/` (read it before
+changing UI or copy). Colours come from `design/tokens.json` (a vendored copy — never edit it here; copy from the
+foundation), consumed by `tailwind.config.mjs`; `npm run check:tokens` (also the `prebuild` step) verifies them.
+Key rules for this site: **gold is a fill, or text on navy only** — on light backgrounds use `brand.goldInk`
+(`text-brand-goldInk`, `hover:text-brand-goldInk`); never `text-brand-gold` on white/ivory (1.96:1). Show **no money
+totals** in any mock (EDL §10). No emoji icons in new work.
+
 ## Tech Stack
 - **Framework**: Astro 4.16.0 (static output, no JS framework)
 - **Styling**: Tailwind CSS 3.4.14 via @astrojs/tailwind 5.1.3; `@tailwindcss/typography` for
